@@ -1,7 +1,16 @@
+import Home from "./pages/Home";
+import SideBar from "./components/SideBar";
+import TopBar from "./components/TopBar";
 function App() {
   return (
-    <div>
-      <h1>KitchenOS</h1>
+    <div className="app">
+     <TopBar />
+
+      <div className="content">
+       <SideBar />
+
+        <Home />
+      </div>
     </div>
   );
 }
