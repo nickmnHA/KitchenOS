@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import DashboardCard from "../cards/DashboardCard";
 
 function Home() {
   const [now, setNow] = useState(new Date());
@@ -6,7 +7,7 @@ function Home() {
   useEffect(() => {
     const timer = window.setInterval(() => {
       setNow(new Date());
-    }, 60_000);
+    }, 60000);
 
     return () => window.clearInterval(timer);
   }, []);
@@ -42,33 +43,29 @@ function Home() {
       </div>
 
       <section className="dashboard-grid">
-        <article className="dashboard-card">
-          <p className="card-label">Next event</p>
+        <DashboardCard title="Next Event">
           <h3>Dinner with family</h3>
           <p className="card-detail">6:30 PM · Tonight</p>
-        </article>
+        </DashboardCard>
 
-        <article className="dashboard-card">
-          <p className="card-label">Weather</p>
+        <DashboardCard title="Weather">
           <h3>72°F</h3>
           <p className="card-detail">Partly cloudy</p>
-        </article>
+        </DashboardCard>
 
-        <article className="dashboard-card">
-          <p className="card-label">Chores</p>
+        <DashboardCard title="Chores">
           <h3>3 remaining</h3>
           <p className="card-detail">Trash, dishes, laundry</p>
-        </article>
+        </DashboardCard>
 
-        <article className="dashboard-card">
-          <p className="card-label">Home status</p>
+        <DashboardCard title="Home Status">
           <h3>Secure</h3>
-          <p className="card-detail">Doors locked · Garage closed</p>
-        </article>
+          <p className="card-detail">
+            Doors locked · Garage closed
+          </p>
+        </DashboardCard>
 
-        <article className="dashboard-card dashboard-card-wide">
-          <p className="card-label">Today</p>
-
+        <DashboardCard title="Today" wide>
           <div className="event-row">
             <span>9:00 AM</span>
             <strong>Work</strong>
@@ -83,17 +80,15 @@ function Home() {
             <span>6:30 PM</span>
             <strong>Dinner with family</strong>
           </div>
-        </article>
+        </DashboardCard>
 
-        <article className="dashboard-card dashboard-card-wide">
-          <p className="card-label">Quick actions</p>
-
+        <DashboardCard title="Quick Actions" wide>
           <div className="quick-actions">
-            <button>Kitchen lights</button>
-            <button>Good night</button>
-            <button>Garage</button>
+            <button>💡 Kitchen Lights</button>
+            <button>🌙 Good Night</button>
+            <button>🚪 Garage</button>
           </div>
-        </article>
+        </DashboardCard>
       </section>
     </main>
   );
