@@ -5,7 +5,6 @@ import ChoresCard from "../cards/ChoresCard";
 import NextEventCard from "../cards/NextEventCard";
 import WeatherCard from "../cards/WeatherCard";
 import { useEffect, useState } from "react";
-import DashboardCard from "../cards/DashboardCard";
 
 function Home() {
   const [now, setNow] = useState(new Date());

@@ -589,3 +589,52 @@
 .event-save-button:hover {
   background: #1d4ed8;
 }
+.month-day.today:not(.active) {
+  outline: 2px solid #22c55e;
+}
+.agenda-event {
+  grid-template-columns: 90px minmax(0, 1fr) auto;
+  align-items: center;
+}
+
+.agenda-event-details {
+  min-width: 0;
+}
+
+.event-delete-button {
+  width: 38px;
+  height: 38px;
+  border: 1px solid #7f1d1d;
+  border-radius: 10px;
+  background: #450a0a;
+  color: #fca5a5;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.event-delete-button:hover {
+  background: #7f1d1d;
+  color: white;
+}
+.agenda-event-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.event-edit-button {
+  width: 38px;
+  height: 38px;
+  border: 1px solid #1e40af;
+  border-radius: 10px;
+  background: #172554;
+  color: #93c5fd;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.event-edit-button:hover {
+  background: #1e40af;
+  color: white;
+}
+}
