@@ -18,7 +18,7 @@ function App() {
       <TopBar />
 
       <div className="content">
-        <SideBar />
+        <SideBar page={page} setPage={setPage} />
 
         {page === "home" && <Home />}
         {page === "calendar" && <Calendar />}
