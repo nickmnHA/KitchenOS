@@ -213,4 +213,379 @@
     flex-direction: column;
     gap: 20px;
   }
+
+  .calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.calendar-header h2 {
+  margin: 0;
+}
+
+.calendar-add-button {
+  padding: 14px 18px;
+  border: 0;
+  border-radius: 12px;
+  background: #2563eb;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.calendar-add-button:hover {
+  background: #1d4ed8;
+}
+
+.calendar-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(320px, 0.8fr);
+  gap: 20px;
+}
+
+.calendar-panel,
+.agenda-panel {
+  padding: 24px;
+  border: 1px solid #334155;
+  border-radius: 18px;
+  background: #1e293b;
+}
+
+.calendar-month-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.calendar-month-header h3 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.calendar-month-header button {
+  width: 44px;
+  height: 44px;
+  border: 1px solid #475569;
+  border-radius: 10px;
+  background: #334155;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.calendar-week {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+
+.calendar-day {
+  min-height: 92px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #475569;
+  border-radius: 14px;
+  background: #334155;
+  color: white;
+  cursor: pointer;
+}
+
+.calendar-day span {
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+.calendar-day strong {
+  font-size: 24px;
+}
+
+.calendar-day.active {
+  background: #2563eb;
+  border-color: #60a5fa;
+}
+
+.calendar-placeholder {
+  min-height: 300px;
+  display: grid;
+  place-items: center;
+  margin-top: 20px;
+  border: 1px dashed #475569;
+  border-radius: 14px;
+  color: #94a3b8;
+}
+
+.agenda-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 18px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #334155;
+}
+
+.agenda-header h3 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.agenda-header > span {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #334155;
+  color: #cbd5e1;
+  font-size: 13px;
+}
+
+.agenda-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.agenda-event {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 16px;
+  padding: 18px;
+  border: 1px solid #334155;
+  border-radius: 14px;
+  background: #111827;
+}
+
+.agenda-time {
+  color: #93c5fd;
+  font-weight: 700;
+}
+
+.agenda-event h4 {
+  margin: 0 0 6px;
+  font-size: 18px;
+}
+
+.agenda-event p {
+  margin: 0;
+  color: #94a3b8;
+}
+
+@media (max-width: 1100px) {
+  .calendar-layout {
+    grid-template-columns: 1fr;
+  }
+}
+.month-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  margin-bottom: 8px;
+  color: #94a3b8;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.month-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.month-day {
+  min-height: 92px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 12px;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  background: #111827;
+  color: white;
+  cursor: pointer;
+}
+
+.month-day:hover {
+  background: #1e293b;
+  border-color: #475569;
+}
+
+.month-day.muted {
+  color: #64748b;
+  background: #0f172a;
+}
+
+.month-day.active {
+  background: #1d4ed8;
+  border-color: #93c5fd;
+  outline: 2px solid #60a5fa;
+}
+
+.month-day > span {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.event-dots {
+  display: flex;
+  gap: 5px;
+}
+
+.event-dot {
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.event-dot.work {
+  background: #3b82f6;
+}
+
+.event-dot.personal {
+  background: #22c55e;
+}
+
+.event-dot.family {
+  background: #f59e0b;
+}
+
+.agenda-event {
+  border-left: 4px solid #475569;
+}
+
+.agenda-event.work {
+  border-left-color: #3b82f6;
+}
+
+.agenda-event.personal {
+  border-left-color: #22c55e;
+}
+
+.agenda-event.family {
+  border-left-color: #f59e0b;
+}
+
+.calendar-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #334155;
+  color: #cbd5e1;
+  font-size: 13px;
+}
+
+.calendar-legend span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+@media (max-width: 800px) {
+  .month-day {
+    min-height: 70px;
+    padding: 8px;
+  }
+
+  .month-day > span {
+    font-size: 15px;
+  }
+}
+.agenda-empty {
+  min-height: 160px;
+  display: grid;
+  place-items: center;
+  border: 1px dashed #475569;
+  border-radius: 14px;
+  color: #94a3b8;
+}
+
+.agenda-empty p {
+  margin: 0;
+}
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(2, 6, 23, 0.78);
+  backdrop-filter: blur(6px);
+}
+
+.event-modal {
+  width: min(460px, 100%);
+  display: grid;
+  gap: 18px;
+  padding: 26px;
+  border: 1px solid #475569;
+  border-radius: 20px;
+  background: #1e293b;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
+}
+
+.event-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.event-modal-header h3 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.modal-close-button {
+  width: 42px;
+  height: 42px;
+  border: 1px solid #475569;
+  border-radius: 10px;
+  background: #334155;
+  color: white;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.event-modal label {
+  display: grid;
+  gap: 8px;
+  color: #cbd5e1;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.event-modal input,
+.event-modal select {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #475569;
+  border-radius: 10px;
+  background: #0f172a;
+  color: white;
+  font: inherit;
+}
+
+.event-save-button {
+  padding: 15px;
+  border: 0;
+  border-radius: 12px;
+  background: #2563eb;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.event-save-button:hover {
+  background: #1d4ed8;
 }

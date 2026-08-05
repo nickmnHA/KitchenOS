@@ -1,3 +1,9 @@
+import QuickActionsCard from "../cards/QuickActionsCard";
+import TodayCard from "../cards/TodayCard";
+import HomeStatusCard from "../cards/HomeStatusCard";
+import ChoresCard from "../cards/ChoresCard";
+import NextEventCard from "../cards/NextEventCard";
+import WeatherCard from "../cards/WeatherCard";
 import { useEffect, useState } from "react";
 import DashboardCard from "../cards/DashboardCard";
 
@@ -43,52 +49,16 @@ function Home() {
       </div>
 
       <section className="dashboard-grid">
-        <DashboardCard title="Next Event">
-          <h3>Dinner with family</h3>
-          <p className="card-detail">6:30 PM · Tonight</p>
-        </DashboardCard>
+        <NextEventCard />
 
-        <DashboardCard title="Weather">
-          <h3>72°F</h3>
-          <p className="card-detail">Partly cloudy</p>
-        </DashboardCard>
+      <WeatherCard />
+        <ChoresCard />
 
-        <DashboardCard title="Chores">
-          <h3>3 remaining</h3>
-          <p className="card-detail">Trash, dishes, laundry</p>
-        </DashboardCard>
+        <HomeStatusCard />
 
-        <DashboardCard title="Home Status">
-          <h3>Secure</h3>
-          <p className="card-detail">
-            Doors locked · Garage closed
-          </p>
-        </DashboardCard>
+        <TodayCard />
 
-        <DashboardCard title="Today" wide>
-          <div className="event-row">
-            <span>9:00 AM</span>
-            <strong>Work</strong>
-          </div>
-
-          <div className="event-row">
-            <span>4:30 PM</span>
-            <strong>Pick up groceries</strong>
-          </div>
-
-          <div className="event-row">
-            <span>6:30 PM</span>
-            <strong>Dinner with family</strong>
-          </div>
-        </DashboardCard>
-
-        <DashboardCard title="Quick Actions" wide>
-          <div className="quick-actions">
-            <button>💡 Kitchen Lights</button>
-            <button>🌙 Good Night</button>
-            <button>🚪 Garage</button>
-          </div>
-        </DashboardCard>
+        <QuickActionsCard />
       </section>
     </main>
   );
