@@ -1,20 +1,11 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
+import {
+  useKitchenStore,
+  type GroceryCategory,
+  type GroceryItem,
+} from "../store/KitchenStore";
 
-type GroceryCategory =
-  | "Produce"
-  | "Dairy"
-  | "Meat"
-  | "Pantry"
-  | "Frozen"
-  | "Household"
-  | "Other";
 
-type GroceryItem = {
-  id: string;
-  name: string;
-  category: GroceryCategory;
-  completed: boolean;
-};
 
 const categories: GroceryCategory[] = [
   "Produce",
@@ -26,51 +17,15 @@ const categories: GroceryCategory[] = [
   "Other",
 ];
 
-function loadItems(): GroceryItem[] {
-  const saved = localStorage.getItem("kitchenos-grocery");
-
-  if (!saved) {
-    return [
-      {
-        id: crypto.randomUUID(),
-        name: "Milk",
-        category: "Dairy",
-        completed: false,
-      },
-      {
-        id: crypto.randomUUID(),
-        name: "Eggs",
-        category: "Dairy",
-        completed: false,
-      },
-      {
-        id: crypto.randomUUID(),
-        name: "Bananas",
-        category: "Produce",
-        completed: false,
-      },
-    ];
-  }
-
-  try {
-    return JSON.parse(saved) as GroceryItem[];
-  } catch {
-    return [];
-  }
-}
-
 function Grocery() {
-  const [items, setItems] = useState<GroceryItem[]>(loadItems);
-  const [name, setName] = useState("");
+const {
+  groceryItems: items,
+  setGroceryItems: setItems,
+} = useKitchenStore();  
+const [name, setName] = useState("");
   const [category, setCategory] =
     useState<GroceryCategory>("Other");
 
-  useEffect(() => {
-    localStorage.setItem(
-      "kitchenos-grocery",
-      JSON.stringify(items),
-    );
-  }, [items]);
 
   const remaining = items.filter(
     (item) => !item.completed,

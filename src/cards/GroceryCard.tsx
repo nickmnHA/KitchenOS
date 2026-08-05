@@ -1,34 +1,14 @@
 import DashboardCard from "./DashboardCard";
-
-type GroceryItem = {
-  id: string;
-  name: string;
-  category: string;
-  completed: boolean;
-};
+import { useKitchenStore } from "../store/KitchenStore";
 
 type GroceryCardProps = {
   onOpen: () => void;
 };
 
-function loadItems(): GroceryItem[] {
-  const saved = localStorage.getItem("kitchenos-grocery");
-
-  if (!saved) {
-    return [];
-  }
-
-  try {
-    return JSON.parse(saved) as GroceryItem[];
-  } catch {
-    return [];
-  }
-}
-
 function GroceryCard({ onOpen }: GroceryCardProps) {
-  const items = loadItems();
+  const { groceryItems } = useKitchenStore();
 
-  const remainingItems = items.filter(
+  const remainingItems = groceryItems.filter(
     (item) => !item.completed,
   );
 
@@ -41,16 +21,13 @@ function GroceryCard({ onOpen }: GroceryCardProps) {
       aria-label="Open grocery list"
     >
       <DashboardCard title="Grocery">
-        <h3>
-          {remainingItems.length}{" "}
-          {remainingItems.length === 1 ? "item" : "items"}
-        </h3>
+        <h3>{remainingItems.length} items</h3>
 
         {previewItems.length > 0 ? (
           <div className="home-grocery-preview">
             {previewItems.map((item) => (
               <p key={item.id}>
-                <span>○</span>
+                <span>🛒</span>
                 {item.name}
               </p>
             ))}

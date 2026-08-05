@@ -1350,3 +1350,3754 @@
 .dashboard-card-button .dashboard-card {
   pointer-events: none;
 }
+.alerts-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.alert-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  background: #111827;
+}
+
+.alert-item p {
+  margin: 0;
+  color: #e2e8f0;
+}
+
+.alert-dot {
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+.alert-item.info .alert-dot {
+  background: #3b82f6;
+}
+
+.alert-item.warning .alert-dot {
+  background: #f59e0b;
+}
+
+.alert-item.danger .alert-dot {
+  background: #ef4444;
+}
+
+.alert-item.warning {
+  border-color: #92400e;
+}
+
+.alert-item.danger {
+  border-color: #991b1b;
+}
+
+.alerts-empty {
+  min-height: 100px;
+  display: grid;
+  place-items: center;
+  color: #94a3b8;
+}
+
+.alerts-empty p {
+  margin: 0;
+}
+.alert-item {
+  width: 100%;
+  text-align: left;
+  color: inherit;
+  cursor: pointer;
+}
+
+.alert-item:hover {
+  background: #1e293b;
+  border-color: #60a5fa;
+}
+
+.alert-arrow {
+  margin-left: auto;
+  color: #94a3b8;
+  font-size: 24px;
+}
+.home-status {
+  font: inherit;
+  cursor: pointer;
+}
+
+.home-status:disabled {
+  cursor: default;
+}
+
+.home-status.warning {
+  border-color: #92400e;
+  background: #451a03;
+  color: #fde68a;
+}
+
+.home-status.warning .status-dot {
+  background: #f59e0b;
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.7);
+}
+
+.home-status.danger {
+  border-color: #991b1b;
+  background: #450a0a;
+  color: #fecaca;
+}
+
+.home-status.danger .status-dot {
+  background: #ef4444;
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.7);
+}
+
+.home-status:not(:disabled):hover {
+  filter: brightness(1.15);
+}
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.notification-wrapper {
+  position: relative;
+}
+
+.notification-button {
+  position: relative;
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #475569;
+  border-radius: 12px;
+  background: #334155;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.notification-button:hover {
+  background: #475569;
+}
+
+.notification-count {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  min-width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  padding: 0 6px;
+  border: 2px solid #1f2937;
+  border-radius: 999px;
+  background: #ef4444;
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.notification-panel {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  z-index: 1200;
+  width: min(380px, 90vw);
+  padding: 18px;
+  border: 1px solid #475569;
+  border-radius: 16px;
+  background: #1e293b;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
+}
+
+.notification-panel h3 {
+  margin: 0 0 14px;
+  font-size: 22px;
+}
+
+.notification-item {
+  padding: 14px;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  background: #111827;
+}
+
+.notification-item + .notification-item {
+  margin-top: 10px;
+}
+
+.notification-item strong {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.notification-item p {
+  margin: 0;
+  color: #cbd5e1;
+}
+
+.notification-item.info {
+  border-left: 4px solid #3b82f6;
+}
+
+.notification-item.warning {
+  border-left: 4px solid #f59e0b;
+}
+
+.notification-item.danger {
+  border-left: 4px solid #ef4444;
+}
+.notification-empty {
+  min-height: 100px;
+  display: grid;
+  place-items: center;
+  color: #94a3b8;
+}
+
+.notification-empty p {
+  margin: 0;
+}
+.notification-panel {
+  pointer-events: auto;
+}
+
+.notification-item {
+  appearance: none;
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  background: #111827;
+  color: white;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.notification-item:hover {
+  background: #263449;
+  border-color: #60a5fa;
+}
+
+.notification-item > div {
+  min-width: 0;
+}
+
+.notification-item strong {
+  display: block;
+  margin: 0 0 6px;
+  color: white;
+  font-size: 16px;
+  text-align: left;
+}
+
+.notification-item p {
+  margin: 0;
+  color: #cbd5e1;
+  text-align: left;
+}
+
+.notification-arrow {
+  align-self: center;
+  color: #94a3b8;
+  font-size: 28px;
+  line-height: 1;
+}
+
+.notification-item.info {
+  border-left: 4px solid #3b82f6;
+}
+
+.notification-item.warning {
+  border-left: 4px solid #f59e0b;
+}
+
+.notification-item.danger {
+  border-left: 4px solid #ef4444;
+}
+.home-grocery-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.home-grocery-preview p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  color: #cbd5e1;
+}
+.command-center-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.command-center-grid div {
+  padding: 14px;
+  border-radius: 12px;
+  background: #0f172a;
+  border: 1px solid #334155;
+}
+
+.command-center-grid strong {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.command-center-grid p {
+  margin: 0;
+  color: #cbd5e1;
+}
+.command-center {
+  margin-bottom: 24px;
+  padding: 28px;
+  border: 1px solid #334155;
+  border-radius: 20px;
+  background: #1e293b;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+}
+
+.command-center-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+.command-center-heading h3 {
+  margin: 8px 0 0;
+  font-size: 30px;
+}
+
+.command-center-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 13px;
+  border: 1px solid #334155;
+  border-radius: 999px;
+  background: #0f172a;
+  color: #cbd5e1;
+  font-size: 13px;
+}
+
+.command-center-status span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #22c55e;
+}
+
+.command-center-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.command-center-grid > div {
+  padding: 18px;
+  border: 1px solid #334155;
+  border-radius: 14px;
+  background: #0f172a;
+}
+
+.command-center-grid strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.command-center-grid p {
+  margin: 0;
+  color: #cbd5e1;
+}
+
+@media (max-width: 1100px) {
+  .command-center-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .command-center-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .command-center-heading {
+    flex-direction: column;
+  }
+}
+.command-center-grid > button {
+  padding: 18px;
+  border: 1px solid #334155;
+  border-radius: 14px;
+  background: #0f172a;
+  color: white;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+}
+
+.command-center-grid > button:hover:not(:disabled) {
+  border-color: #60a5fa;
+  background: #172033;
+}
+
+.command-center-grid > button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.command-center-status.warning {
+  border-color: #92400e;
+  background: #451a03;
+  color: #fde68a;
+}
+
+.command-center-status.warning span {
+  background: #f59e0b;
+}
+.home-page {
+  display: grid;
+  gap: 24px;
+}
+
+.home-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 28px;
+  padding: 30px;
+  border: 1px solid #334155;
+  border-radius: 22px;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(37, 99, 235, 0.18),
+      transparent 34%
+    ),
+    #1e293b;
+}
+
+.home-hero-copy h2 {
+  margin: 0;
+  font-size: 42px;
+}
+
+.home-hero-subtitle {
+  margin: 10px 0 0;
+  color: #94a3b8;
+  font-size: 16px;
+}
+
+.home-primary-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.home-primary-grid > * {
+  grid-column: span 2;
+}
+
+.home-primary-grid > :first-child,
+.home-primary-grid > :nth-child(2) {
+  grid-column: span 3;
+}
+
+.home-secondary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.home-secondary-grid > * {
+  min-width: 0;
+}
+
+.home-secondary-grid .dashboard-card-button-wide,
+.home-secondary-grid .dashboard-card-wide {
+  grid-column: auto;
+}
+
+.home-secondary-grid > :last-child {
+  grid-column: span 2;
+}
+
+.home-primary-grid .dashboard-card,
+.home-secondary-grid .dashboard-card {
+  height: 100%;
+}
+
+@media (max-width: 1200px) {
+  .home-primary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-primary-grid > *,
+  .home-primary-grid > :first-child,
+  .home-primary-grid > :nth-child(2) {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 900px) {
+  .home-hero {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .home-primary-grid,
+  .home-secondary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-secondary-grid > :last-child {
+    grid-column: span 1;
+  }
+
+  .home-hero-copy h2 {
+    font-size: 34px;
+  }
+}.home-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(420px, 1fr) auto;
+  align-items: center;
+}
+
+.home-hero-schedule {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.hero-schedule-card {
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid #334155;
+  border-radius: 14px;
+  background: #0f172a;
+  color: white;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+}
+
+.hero-schedule-card:hover {
+  border-color: #60a5fa;
+  background: #172033;
+}
+
+.hero-schedule-card strong {
+  display: block;
+  margin: 8px 0 5px;
+  overflow: hidden;
+  font-size: 18px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hero-schedule-card small {
+  display: block;
+  overflow: hidden;
+  color: #94a3b8;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.home-primary-grid-single,
+.home-secondary-grid-single {
+  grid-template-columns: 1fr;
+}
+
+@media (max-width: 1200px) {
+  .home-hero {
+    grid-template-columns: 1fr;
+    align-items: flex-start;
+  }
+
+  .home-hero-schedule {
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .home-hero-schedule {
+    grid-template-columns: 1fr;
+  }
+}
+/* =====================================
+   HOUSE SNAPSHOT
+===================================== */
+
+.house-snapshot {
+  width: 100%;
+  max-width: none;
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template-columns: 1.15fr 0.9fr 1.35fr;
+  grid-template-areas:
+    "header header header"
+    "today weather house";
+
+  gap: 16px;
+
+  margin: 0;
+  padding: 18px 24px;
+
+  border: 1px solid #334155;
+  border-radius: 22px;
+
+  background: linear-gradient(
+    180deg,
+    #26364a,
+    #1f2b3d
+  );
+}
+
+/* ---------------- HEADER ---------------- */
+
+.snapshot-header {
+  grid-area: header;
+}
+
+.snapshot-header h2 {
+  margin: 4px 0 0;
+
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.snapshot-grid {
+  display: contents;
+}
+
+/* ---------------- COLUMNS ---------------- */
+
+.snapshot-card:nth-child(1) {
+  grid-area: today;
+}
+
+.snapshot-card:nth-child(2) {
+  grid-area: weather;
+}
+
+.snapshot-card:nth-child(3) {
+  grid-area: house;
+}
+
+.snapshot-label {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: #8fa6c7;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+/* ---------------- TODAY ---------------- */
+
+.snapshot-link {
+  width: 100%;
+
+  padding: 12px 14px;
+
+  margin-bottom: 10px;
+
+  border: 1px solid #334155;
+
+  border-radius: 12px;
+
+  background: #111827;
+
+  color: white;
+
+  text-align: left;
+
+  font: inherit;
+
+  cursor: pointer;
+
+  transition: .18s;
+}
+
+.snapshot-link:hover {
+  background: #172033;
+  border-color: #60a5fa;
+}
+
+.snapshot-more {
+  margin-top: 6px;
+
+  color: #94a3b8;
+
+  font-size: 14px;
+}
+
+/* ---------------- WEATHER ---------------- */
+
+.snapshot-weather {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  height: 128px;
+
+  padding: 18px;
+
+  border: 1px solid #334155;
+  border-radius: 16px;
+
+  background: #111827;
+}
+
+.weather-temp {
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.weather-desc {
+  margin-top: 10px;
+
+  color: #94a3b8;
+
+  font-size: 16px;
+}
+
+/* ---------------- HOUSE ---------------- */
+
+.snapshot-status {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.status-pill{
+
+backdrop-filter:blur(22px);
+
+-webkit-backdrop-filter:blur(22px);
+
+background:rgba(17,24,39,.42);
+
+border:1px solid rgba(255,255,255,.08);
+
+box-shadow:
+
+0 8px 24px rgba(0,0,0,.18),
+
+inset 0 1px rgba(255,255,255,.06);
+
+transition:.35s;
+
+.status-pill:hover{
+
+transform:translateY(-2px);
+
+box-shadow:
+
+0 14px 28px rgba(0,0,0,.24);
+
+
+}
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 16px;
+
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.08),
+      rgba(255, 255, 255, 0.025)
+    ),
+    rgba(15, 23, 42, 0.72);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 10px 24px rgba(0, 0, 0, 0.2);
+
+  color: white;
+  font-size: 14px;
+  text-align: left;
+
+  transition:
+    transform 0.18s ease,
+    border-color 0.18s ease,
+    background 0.18s ease;
+}
+
+.status-pill:hover {
+  transform: translateY(-2px);
+  border-color: rgba(147, 197, 253, 0.55);
+}
+
+.status-pill.success {
+  border-color: rgba(34, 197, 94, 0.45);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(34, 197, 94, 0.22),
+      rgba(34, 197, 94, 0.08)
+    ),
+    rgba(5, 46, 22, 0.72);
+}
+
+.status-pill.warning {
+  border-color: rgba(245, 158, 11, 0.5);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(245, 158, 11, 0.24),
+      rgba(245, 158, 11, 0.08)
+    ),
+    rgba(69, 26, 3, 0.75);
+
+  cursor: pointer;
+}
+
+.status-pill.warning:hover {
+  border-color: rgba(251, 191, 36, 0.85);
+}
+
+.status-pill.danger {
+  border-color: rgba(239, 68, 68, 0.55);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(239, 68, 68, 0.25),
+      rgba(239, 68, 68, 0.09)
+    ),
+    rgba(69, 10, 10, 0.78);
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+@media (max-width: 1200px) {
+
+  .house-snapshot {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "header header"
+      "today weather"
+      "house house";
+  }
+
+}
+
+@media (max-width: 760px) {
+
+  .house-snapshot {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "today"
+      "weather"
+      "house";
+  }
+
+  .snapshot-status {
+    grid-template-columns: 1fr;
+  }
+
+  .snapshot-header h2 {
+    font-size: 30px;
+  }
+
+}
+.home-page {
+  width: 100%;
+}
+
+.house-snapshot,
+.home-page > .dashboard-card,
+.home-page > section {
+  width: 100%;
+  max-width: none;
+  box-sizing: border-box;
+}
+
+.house-snapshot {
+  margin-left: 0;
+  margin-right: 0;
+}
+.home-page > .house-snapshot {
+  grid-column: 1 / -1 !important;
+  justify-self: stretch !important;
+
+  width: 100% !important;
+  max-width: none !important;
+  min-height: 0;
+
+  margin: 0 !important;
+  box-sizing: border-box;
+}
+.home-page > .house-snapshot {
+  align-content: start;
+  row-gap: 14px;
+}
+.home-page {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  width: 100%;
+  gap: 24px;
+}
+
+.home-page > * {
+  grid-column: 1 / -1 !important;
+  width: 100% !important;
+  max-width: none !important;
+  box-sizing: border-box;
+}
+@keyframes securePulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.45);
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
+}
+
+@keyframes warningPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.5);
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgba(245, 158, 11, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0);
+  }
+}
+
+@keyframes dangerPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.55);
+  }
+
+  70% {
+    box-shadow: 0 0 0 12px rgba(239, 68, 68, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+  }
+}
+
+.status-pill.success {
+  animation: securePulse 2.4s infinite;
+}
+
+.status-pill.warning {
+  animation: warningPulse 1.8s infinite;
+}
+
+.status-pill.danger {
+  border-color: #991b1b;
+  background: #450a0a;
+  animation: dangerPulse 1.35s infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .status-pill.success,
+  .status-pill.warning,
+  .status-pill.danger {
+    animation: none;
+  }
+}
+.status-pill-priority {
+  grid-column: 1 / -1;
+  min-height: 76px;
+  order: -10;
+}
+
+.status-pill-priority .status-pill-icon {
+  font-size: 30px;
+}
+
+.status-pill-priority strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 18px;
+}
+
+.status-pill-priority small {
+  display: block;
+  color: #cbd5e1;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.status-pill-icon {
+  flex-shrink: 0;
+  margin-right: 10px;
+  font-size: 19px;
+}
+
+.house-snapshot.has-danger {
+  border-color: rgba(239, 68, 68, 0.65);
+  box-shadow:
+    0 0 0 1px rgba(239, 68, 68, 0.16),
+    0 0 34px rgba(239, 68, 68, 0.18);
+}
+
+.status-pill.danger {
+  color: white;
+  text-align: left;
+}
+.house-snapshot.house-health-attention {
+  border-color: rgba(245, 158, 11, 0.5);
+  box-shadow:
+    0 0 0 1px rgba(245, 158, 11, 0.1),
+    0 0 28px rgba(245, 158, 11, 0.12);
+}
+
+.house-snapshot.house-health-critical {
+  border-color: rgba(239, 68, 68, 0.65);
+  box-shadow:
+    0 0 0 1px rgba(239, 68, 68, 0.16),
+    0 0 34px rgba(239, 68, 68, 0.18);
+}
+.weather-current {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.weather-icon {
+  font-size: 42px;
+  line-height: 1;
+}
+
+.weather-details {
+  display: grid;
+  gap: 4px;
+  margin-top: 10px;
+  color: #94a3b8;
+  font-size: 13px;
+}
+.snapshot-weather {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.snapshot-weather > :not(.weather-effects) {
+  position: relative;
+  z-index: 2;
+}
+
+.weather-effects {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Sunny */
+
+.weather-sunny {
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(250, 204, 21, 0.25),
+      transparent 34%
+    ),
+    #111827;
+}
+
+.weather-sunny .weather-effects::before {
+  content: "";
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: rgba(250, 204, 21, 0.38);
+  box-shadow:
+    0 0 24px rgba(250, 204, 21, 0.5),
+    0 0 55px rgba(250, 204, 21, 0.2);
+  animation: weatherSunPulse 3.8s ease-in-out infinite;
+}
+
+/* Clear night */
+
+.weather-clear-night {
+  background:
+    radial-gradient(
+      circle at 84% 20%,
+      rgba(147, 197, 253, 0.2),
+      transparent 30%
+    ),
+    #0b1220;
+}
+
+.weather-clear-night .weather-effects span {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: white;
+  animation: weatherTwinkle 2.5s ease-in-out infinite;
+}
+
+.weather-clear-night .weather-effects span:nth-child(1) {
+  top: 18%;
+  left: 70%;
+}
+
+.weather-clear-night .weather-effects span:nth-child(2) {
+  top: 34%;
+  left: 82%;
+  animation-delay: 0.5s;
+}
+
+.weather-clear-night .weather-effects span:nth-child(3) {
+  top: 62%;
+  left: 74%;
+  animation-delay: 1s;
+}
+
+.weather-clear-night .weather-effects span:nth-child(4) {
+  top: 23%;
+  left: 90%;
+  animation-delay: 1.4s;
+}
+
+/* Clouds */
+
+.weather-cloudy .weather-effects::before,
+.weather-cloudy .weather-effects::after {
+  content: "";
+  position: absolute;
+  width: 105px;
+  height: 34px;
+  border-radius: 999px;
+  background: rgba(203, 213, 225, 0.12);
+  filter: blur(1px);
+  animation: weatherCloudDrift 14s linear infinite;
+}
+
+.weather-cloudy .weather-effects::before {
+  top: 20%;
+  left: -120px;
+}
+
+.weather-cloudy .weather-effects::after {
+  bottom: 16%;
+  left: -160px;
+  opacity: 0.7;
+  animation-duration: 19s;
+  animation-delay: -7s;
+}
+
+/* Rain */
+
+.weather-rain {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(59, 130, 246, 0.12),
+      rgba(15, 23, 42, 0.1)
+    ),
+    #111827;
+}
+
+.weather-rain .weather-effects span {
+  position: absolute;
+  top: -22px;
+  width: 2px;
+  height: 18px;
+  border-radius: 999px;
+  background: rgba(147, 197, 253, 0.6);
+  transform: rotate(14deg);
+  animation: weatherRainFall 1.1s linear infinite;
+}
+
+.weather-rain .weather-effects span:nth-child(1) {
+  left: 18%;
+}
+
+.weather-rain .weather-effects span:nth-child(2) {
+  left: 34%;
+  animation-delay: 0.3s;
+}
+
+.weather-rain .weather-effects span:nth-child(3) {
+  left: 51%;
+  animation-delay: 0.7s;
+}
+
+.weather-rain .weather-effects span:nth-child(4) {
+  left: 67%;
+  animation-delay: 0.15s;
+}
+
+.weather-rain .weather-effects span:nth-child(5) {
+  left: 82%;
+  animation-delay: 0.55s;
+}
+
+.weather-rain .weather-effects span:nth-child(6) {
+  left: 93%;
+  animation-delay: 0.85s;
+}
+
+/* Snow */
+
+.weather-snow .weather-effects span {
+  position: absolute;
+  top: -18px;
+  color: rgba(255, 255, 255, 0.75);
+  animation: weatherSnowFall 5s linear infinite;
+}
+
+.weather-snow .weather-effects span::before {
+  content: "❄";
+}
+
+.weather-snow .weather-effects span:nth-child(1) {
+  left: 12%;
+}
+
+.weather-snow .weather-effects span:nth-child(2) {
+  left: 29%;
+  animation-delay: 1.1s;
+}
+
+.weather-snow .weather-effects span:nth-child(3) {
+  left: 48%;
+  animation-delay: 2s;
+}
+
+.weather-snow .weather-effects span:nth-child(4) {
+  left: 65%;
+  animation-delay: 0.6s;
+}
+
+.weather-snow .weather-effects span:nth-child(5) {
+  left: 81%;
+  animation-delay: 2.8s;
+}
+
+.weather-snow .weather-effects span:nth-child(6) {
+  left: 93%;
+  animation-delay: 1.6s;
+}
+
+/* Fog */
+
+.weather-fog .weather-effects::before,
+.weather-fog .weather-effects::after {
+  content: "";
+  position: absolute;
+  left: -45%;
+  width: 145%;
+  height: 22px;
+  border-radius: 999px;
+  background: rgba(203, 213, 225, 0.12);
+  filter: blur(7px);
+  animation: weatherFogMove 12s ease-in-out infinite alternate;
+}
+
+.weather-fog .weather-effects::before {
+  top: 35%;
+}
+
+.weather-fog .weather-effects::after {
+  top: 63%;
+  animation-delay: -5s;
+}
+
+/* Thunderstorm */
+
+.weather-storm {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(99, 102, 241, 0.14),
+      rgba(15, 23, 42, 0.12)
+    ),
+    #111827;
+}
+
+.weather-storm .weather-effects::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0);
+  animation: weatherLightning 6s infinite;
+}
+
+.weather-storm .weather-effects span {
+  position: absolute;
+  top: -22px;
+  width: 2px;
+  height: 18px;
+  background: rgba(147, 197, 253, 0.55);
+  transform: rotate(14deg);
+  animation: weatherRainFall 0.9s linear infinite;
+}
+
+.weather-storm .weather-effects span:nth-child(1) {
+  left: 20%;
+}
+
+.weather-storm .weather-effects span:nth-child(2) {
+  left: 42%;
+  animation-delay: 0.25s;
+}
+
+.weather-storm .weather-effects span:nth-child(3) {
+  left: 63%;
+  animation-delay: 0.5s;
+}
+
+.weather-storm .weather-effects span:nth-child(4) {
+  left: 84%;
+  animation-delay: 0.7s;
+}
+
+@keyframes weatherSunPulse {
+  0%,
+  100% {
+    transform: scale(0.92);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+}
+
+@keyframes weatherTwinkle {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scale(0.7);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.25);
+  }
+}
+
+@keyframes weatherCloudDrift {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(520px);
+  }
+}
+
+@keyframes weatherRainFall {
+  from {
+    transform: translateY(-20px) rotate(14deg);
+  }
+
+  to {
+    transform: translateY(190px) rotate(14deg);
+  }
+}
+
+@keyframes weatherSnowFall {
+  from {
+    transform: translate(0, -20px) rotate(0deg);
+  }
+
+  to {
+    transform: translate(30px, 190px) rotate(300deg);
+  }
+}
+
+@keyframes weatherFogMove {
+  from {
+    transform: translateX(-8%);
+  }
+
+  to {
+    transform: translateX(20%);
+  }
+}
+
+@keyframes weatherLightning {
+  0%,
+  88%,
+  92%,
+  100% {
+    background: rgba(255, 255, 255, 0);
+  }
+
+  89% {
+    background: rgba(255, 255, 255, 0.25);
+  }
+
+  90% {
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  91% {
+    background: rgba(255, 255, 255, 0.18);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .weather-effects,
+  .weather-effects::before,
+  .weather-effects::after,
+  .weather-effects span {
+    animation: none !important;
+  }
+}
+/* ======================================================
+   LIVING HERO BACKGROUND
+====================================================== */
+
+.house-snapshot {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition:
+    background 700ms ease,
+    box-shadow 700ms ease,
+    border-color 700ms ease;
+}
+
+.house-snapshot::before {
+  content: "";
+  position: absolute;
+  inset: -30%;
+  pointer-events: none;
+  opacity: .55;
+  filter: blur(70px);
+  animation:
+    heroGlow 18s ease-in-out infinite alternate,
+    heroFloat 26s linear infinite;
+}
+
+.house-snapshot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,.02),
+      rgba(255,255,255,0)
+    );
+}
+
+/* ---------- SUNNY ---------- */
+
+.house-snapshot.weather-sunny::before{
+  background:
+  radial-gradient(circle,#FFD76B 0%,transparent 60%);
+}
+
+/* ---------- CLOUDY ---------- */
+
+.house-snapshot.weather-cloudy::before{
+  background:
+  radial-gradient(circle,#8DA3C8 0%,transparent 65%);
+}
+
+/* ---------- RAIN ---------- */
+
+.house-snapshot.weather-rain::before{
+  background:
+  radial-gradient(circle,#3B82F6 0%,transparent 60%);
+}
+
+/* ---------- SNOW ---------- */
+
+.house-snapshot.weather-snow::before{
+  background:
+  radial-gradient(circle,#EAF6FF 0%,transparent 60%);
+}
+
+/* ---------- STORM ---------- */
+
+.house-snapshot.weather-storm::before{
+  background:
+  radial-gradient(circle,#7C7CFF 0%,transparent 60%);
+}
+
+/* ---------- NIGHT ---------- */
+
+.house-snapshot.weather-clear-night::before{
+  background:
+  radial-gradient(circle,#4564B8 0%,transparent 60%);
+}
+
+@keyframes heroGlow{
+
+0%{
+transform:translate(-4%,-2%) scale(.95);
+opacity:.45;
+}
+
+100%{
+transform:translate(5%,3%) scale(1.08);
+opacity:.75;
+}
+
+}
+
+@keyframes heroFloat{
+
+0%{
+rotate:0deg;
+}
+
+100%{
+rotate:360deg;
+}
+
+}
+.hero-title{
+
+animation:heroSlide .7s ease;
+
+}
+
+.hero-name{
+
+display:inline-block;
+animation:heroFade 1.4s ease;
+
+}
+
+@keyframes heroSlide{
+
+from{
+
+opacity:0;
+transform:translateY(18px);
+
+}
+
+to{
+
+opacity:1;
+transform:none;
+
+}
+
+}
+
+@keyframes heroFade{
+
+0%{
+
+opacity:0;
+
+transform:translateY(12px);
+
+}
+
+40%{
+
+opacity:0;
+
+}
+
+100%{
+
+opacity:1;
+
+transform:none;
+
+}
+
+}
+/* =====================================
+   LIVE CLOCK
+===================================== */
+
+.live-clock {
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+  min-width: 112px;
+  font-variant-numeric: tabular-nums;
+}
+
+.clock-colon {
+  display: inline-block;
+  margin: 0 2px;
+  animation: clockColonPulse 1s ease-in-out infinite;
+}
+
+.clock-period {
+  margin-left: 5px;
+  font-size: 0.58em;
+  letter-spacing: 0.04em;
+}
+
+@keyframes clockColonPulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.28;
+  }
+}
+
+/* =====================================
+   DASHBOARD ENTRANCE ANIMATIONS
+===================================== */
+
+.snapshot-header,
+.snapshot-card,
+.home-page > .dashboard-card,
+.home-page > .dashboard-card-wide,
+.home-page > .alerts-card {
+  opacity: 0;
+  animation: dashboardEntrance 650ms
+    cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.snapshot-header {
+  animation-delay: 60ms;
+}
+
+.snapshot-card:nth-child(1) {
+  animation-delay: 140ms;
+}
+
+.snapshot-card:nth-child(2) {
+  animation-delay: 220ms;
+}
+
+.snapshot-card:nth-child(3) {
+  animation-delay: 300ms;
+}
+
+/* Alerts is the second direct item inside Home */
+.home-page > :nth-child(2) {
+  opacity: 0;
+  animation: dashboardEntrance 650ms
+    cubic-bezier(0.22, 1, 0.36, 1) 390ms forwards;
+}
+
+.snapshot-link {
+  opacity: 0;
+  animation: dashboardRowEntrance 480ms
+    cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.snapshot-link:nth-of-type(1) {
+  animation-delay: 250ms;
+}
+
+.snapshot-link:nth-of-type(2) {
+  animation-delay: 310ms;
+}
+
+.snapshot-link:nth-of-type(3) {
+  animation-delay: 370ms;
+}
+
+@keyframes dashboardEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes dashboardRowEntrance {
+  from {
+    opacity: 0;
+    transform: translateX(-14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes dashboardTileEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .clock-colon,
+  .snapshot-header,
+  .snapshot-card,
+  .snapshot-link,
+  .status-pill,
+  .home-page > :nth-child(2) {
+    opacity: 1;
+    animation: none !important;
+    transform: none;
+  }
+}
+/* Fix House Health tile hidden by animation conflict */
+
+.status-pill {
+  opacity: 1;
+}
+
+.status-pill-priority.success {
+  animation: securePulse 2.4s infinite;
+}
+
+.status-pill-priority.warning {
+  animation: warningPulse 1.8s infinite;
+}
+
+.status-pill-priority.danger {
+  animation: dangerPulse 1.35s infinite;
+}
+/* =====================================================
+   KITCHENOS WARM OFF-WHITE THEME
+   Keep this block at the absolute bottom of App.css
+===================================================== */
+
+:root {
+  --ko-bg: #f4f1e9;
+  --ko-bg-secondary: #ebe7dc;
+
+  --ko-surface: rgba(255, 255, 255, 0.74);
+  --ko-surface-solid: #fffdf8;
+  --ko-surface-muted: rgba(239, 235, 224, 0.82);
+
+  --ko-text: #24231f;
+  --ko-text-soft: #55534c;
+  --ko-text-muted: #77736a;
+
+  --ko-border: rgba(57, 52, 43, 0.14);
+  --ko-border-strong: rgba(57, 52, 43, 0.23);
+
+  --ko-accent: #2563eb;
+  --ko-accent-soft: rgba(37, 99, 235, 0.12);
+
+  --ko-success: #15803d;
+  --ko-success-bg: rgba(34, 197, 94, 0.13);
+
+  --ko-warning: #b45309;
+  --ko-warning-bg: rgba(245, 158, 11, 0.15);
+
+  --ko-danger: #b91c1c;
+  --ko-danger-bg: rgba(239, 68, 68, 0.14);
+
+  --ko-shadow:
+    0 18px 50px rgba(70, 60, 42, 0.1);
+}
+
+/* ---------- APP BACKGROUND ---------- */
+
+html,
+body,
+#root {
+  background: var(--ko-bg);
+  color: var(--ko-text);
+}
+
+body {
+  color: var(--ko-text);
+}
+
+.app {
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(255, 220, 145, 0.17),
+      transparent 32%
+    ),
+    var(--ko-bg);
+  color: var(--ko-text);
+}
+
+.content,
+.main,
+.home-page {
+  background: transparent;
+  color: var(--ko-text);
+}
+
+/* ---------- TOP BAR ---------- */
+
+.topbar {
+  background: rgba(250, 248, 242, 0.88);
+  border-bottom-color: var(--ko-border);
+  color: var(--ko-text);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+}
+
+.topbar h1,
+.topbar-clock strong,
+.live-clock {
+  color: var(--ko-text);
+}
+
+.topbar-clock > span,
+.clock-period {
+  color: var(--ko-text-muted);
+}
+
+/* ---------- SIDEBAR ---------- */
+
+.sidebar {
+  background: rgba(235, 231, 220, 0.92);
+  border-right: 1px solid var(--ko-border);
+}
+
+.sidebar button,
+.sidebar a {
+  background: rgba(255, 255, 255, 0.56);
+  border-color: var(--ko-border);
+  color: var(--ko-text);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.75);
+}
+
+.sidebar button:hover,
+.sidebar a:hover {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: var(--ko-border-strong);
+}
+
+.sidebar .active,
+.sidebar button.active,
+.sidebar a.active {
+  background: var(--ko-accent);
+  border-color: var(--ko-accent);
+  color: white;
+  box-shadow:
+    0 8px 22px rgba(37, 99, 235, 0.22);
+}
+
+/* ---------- GENERAL TYPOGRAPHY ---------- */
+
+h1,
+h2,
+h3,
+h4,
+strong {
+  color: var(--ko-text);
+}
+
+p {
+  color: var(--ko-text-soft);
+}
+
+.eyebrow,
+.card-label,
+.snapshot-label {
+  color: #667894;
+}
+
+.card-detail,
+.snapshot-more,
+.weather-desc,
+.weather-details {
+  color: var(--ko-text-muted);
+}
+
+/* ---------- GENERAL CARDS ---------- */
+
+.dashboard-card,
+.dashboard-card-wide,
+.command-center,
+.house-snapshot,
+.notification-panel,
+.event-modal,
+.pin-modal,
+.settings-card,
+.chore-card,
+.grocery-card,
+.calendar-panel,
+.agenda-panel {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.83),
+      rgba(250, 247, 239, 0.7)
+    );
+  border-color: var(--ko-border);
+  color: var(--ko-text);
+  box-shadow: var(--ko-shadow);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+}
+
+/* ---------- HOUSE SNAPSHOT ---------- */
+
+.house-snapshot {
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(255, 255, 255, 0.92),
+      transparent 36%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(255, 253, 247, 0.94),
+      rgba(233, 228, 215, 0.82)
+    );
+  border-color: var(--ko-border);
+}
+
+.snapshot-header h2 {
+  color: var(--ko-text);
+}
+
+.snapshot-link,
+.snapshot-weather {
+  background: rgba(255, 255, 255, 0.67);
+  border-color: var(--ko-border);
+  color: var(--ko-text);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.85),
+    0 8px 20px rgba(70, 60, 42, 0.07);
+}
+
+.snapshot-link:hover {
+  background: rgba(255, 255, 255, 0.96);
+  border-color: rgba(37, 99, 235, 0.42);
+}
+
+.weather-temp {
+  color: var(--ko-text);
+}
+
+/* ---------- GLASS STATUS TILES ---------- */
+
+.status-pill {
+  color: var(--ko-text);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.72),
+      rgba(247, 243, 234, 0.54)
+    );
+
+  border-color: var(--ko-border);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.92),
+    0 10px 24px rgba(70, 60, 42, 0.09);
+
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+}
+
+.status-pill:hover {
+  border-color: rgba(37, 99, 235, 0.4);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    0 14px 30px rgba(70, 60, 42, 0.13);
+}
+
+.status-pill.success {
+  color: #14532d;
+  border-color: rgba(21, 128, 61, 0.3);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(220, 252, 231, 0.88),
+      rgba(187, 247, 208, 0.58)
+    );
+}
+
+.status-pill.warning {
+  color: #78350f;
+  border-color: rgba(180, 83, 9, 0.34);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(254, 243, 199, 0.92),
+      rgba(253, 230, 138, 0.56)
+    );
+}
+
+.status-pill.danger {
+  color: #7f1d1d;
+  border-color: rgba(185, 28, 28, 0.34);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(254, 226, 226, 0.92),
+      rgba(254, 202, 202, 0.58)
+    );
+}
+
+.status-pill-priority small {
+  color: currentColor;
+  opacity: 0.72;
+}
+
+/* ---------- HOUSE HEALTH GLOWS ---------- */
+
+.house-snapshot.house-health-attention {
+  border-color: rgba(245, 158, 11, 0.38);
+  box-shadow:
+    0 0 0 1px rgba(245, 158, 11, 0.08),
+    0 18px 48px rgba(180, 83, 9, 0.1);
+}
+
+.house-snapshot.house-health-critical {
+  border-color: rgba(239, 68, 68, 0.42);
+  box-shadow:
+    0 0 0 1px rgba(239, 68, 68, 0.1),
+    0 18px 48px rgba(185, 28, 28, 0.13);
+}
+
+/* ---------- ALERTS ---------- */
+
+.alert-item,
+.notification-item {
+  background: rgba(255, 255, 255, 0.65);
+  border-color: var(--ko-border);
+  color: var(--ko-text);
+}
+
+.alert-item p,
+.notification-item p {
+  color: var(--ko-text-soft);
+}
+
+.alert-item:hover,
+.notification-item:hover {
+  background: rgba(255, 255, 255, 0.96);
+  border-color: rgba(37, 99, 235, 0.42);
+}
+
+.alert-arrow,
+.notification-arrow {
+  color: var(--ko-text-muted);
+}
+
+/* ---------- NOTIFICATION BELL ---------- */
+
+.notification-button {
+  background: rgba(255, 255, 255, 0.62);
+  border-color: var(--ko-border);
+  color: var(--ko-text);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.85);
+}
+
+.notification-button:hover {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.notification-count {
+  border-color: #faf8f2;
+}
+
+/* ---------- CALENDAR ---------- */
+
+.month-day,
+.calendar-month-header button {
+  background: rgba(255, 255, 255, 0.62);
+  border-color: var(--ko-border);
+  color: var(--ko-text);
+}
+
+.month-day:hover,
+.calendar-month-header button:hover {
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.month-day.active {
+  background: var(--ko-accent);
+  color: white;
+}
+
+.month-day.other-month {
+  color: var(--ko-text-muted);
+  opacity: 0.7;
+}
+
+.agenda-event {
+  background: rgba(255, 255, 255, 0.62);
+  border-color: var(--ko-border);
+  color: var(--ko-text);
+}
+
+/* ---------- FORMS ---------- */
+
+input,
+select,
+textarea,
+.event-modal input,
+.event-modal select {
+  background: rgba(255, 255, 255, 0.72);
+  border-color: var(--ko-border-strong);
+  color: var(--ko-text);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #928e84;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--ko-accent);
+  outline: 3px solid var(--ko-accent-soft);
+}
+
+/* ---------- BUTTONS ---------- */
+
+button {
+  font-family: inherit;
+}
+
+.event-save-button,
+.primary-button,
+.add-button,
+.calendar-add-button {
+  background: var(--ko-accent);
+  color: white;
+}
+
+.event-save-button:hover,
+.primary-button:hover,
+.add-button:hover,
+.calendar-add-button:hover {
+  background: #1d4ed8;
+}
+
+/* ---------- MODAL BACKDROPS ---------- */
+
+.modal-overlay,
+.event-modal-overlay,
+.pin-modal-overlay {
+  background: rgba(54, 49, 40, 0.34);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* ---------- WEATHER LIGHT-THEME TINTS ---------- */
+
+.weather-sunny {
+  background:
+    radial-gradient(
+      circle at 82% 18%,
+      rgba(250, 204, 21, 0.25),
+      transparent 36%
+    ),
+    rgba(255, 252, 235, 0.78);
+}
+
+.weather-cloudy {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(226, 232, 240, 0.68),
+      rgba(255, 255, 255, 0.58)
+    );
+}
+
+.weather-rain {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(191, 219, 254, 0.66),
+      rgba(239, 246, 255, 0.72)
+    );
+}
+
+.weather-snow {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(240, 249, 255, 0.94),
+      rgba(224, 242, 254, 0.7)
+    );
+}
+
+.weather-fog {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(226, 232, 240, 0.78),
+      rgba(248, 250, 252, 0.74)
+    );
+}
+
+.weather-storm {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(199, 210, 254, 0.7),
+      rgba(238, 242, 255, 0.72)
+    );
+}
+
+.weather-clear-night {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(71, 85, 105, 0.92),
+      rgba(30, 41, 59, 0.92)
+    );
+  color: white;
+}
+
+.weather-clear-night .weather-temp,
+.weather-clear-night .weather-desc,
+.weather-clear-night .weather-details {
+  color: white;
+}
+
+/* ---------- SCROLLBARS ---------- */
+
+* {
+  scrollbar-color: #b9b3a7 transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #b9b3a7;
+  border-radius: 999px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+/* =========================================
+   KITCHENOS COLOR OVERRIDES
+========================================= */
+
+:root {
+  --ko-bg: #e8e3d8;
+  --ko-bg-secondary: #ddd7ca;
+  --ko-text: #1f1f1f;
+  --ko-text-soft: #55514a;
+  --ko-text-muted: #777168;
+  --ko-border: rgba(45, 42, 36, 0.14);
+}
+
+/* Main off-white background */
+
+html,
+body,
+#root,
+.app {
+  background: #e8e3d8 !important;
+  color: var(--ko-text);
+}
+
+.content,
+.main,
+.home-page {
+  background: transparent !important;
+}
+
+/* Clock and date */
+
+.topbar-clock,
+.topbar-clock strong,
+.topbar-clock span,
+.live-clock,
+.clock-colon,
+.clock-period {
+  color: #000000 !important;
+}
+
+/* Sidebar */
+
+.sidebar {
+  background: #ddd7ca !important;
+  border-right-color: var(--ko-border) !important;
+}
+
+.sidebar button,
+.sidebar a {
+  background: rgba(255, 255, 255, 0.5) !important;
+  border-color: var(--ko-border) !important;
+  color: #2a2926 !important;
+}
+
+/* Selected sidebar item: gray, not blue */
+
+.sidebar .active,
+.sidebar button.active,
+.sidebar a.active {
+  background: #a9a9a9 !important;
+  border-color: #929292 !important;
+  color: #111111 !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.55),
+    0 7px 18px rgba(40, 40, 40, 0.14) !important;
+}
+
+.sidebar button:hover,
+.sidebar a:hover {
+  background: #c4c1ba !important;
+  border-color: #aaa69e !important;
+}
+/* ===========================================
+   WARM LIGHT THEME OVERRIDES
+=========================================== */
+
+/* Inputs */
+
+input,
+select,
+textarea,
+.chore-input,
+.grocery-input,
+.pin-input,
+.calendar-input {
+    background: rgba(255,255,255,.82) !important;
+    color:#24211d !important;
+    border:1px solid rgba(70,65,55,.15) !important;
+}
+
+input::placeholder,
+textarea::placeholder{
+    color:#8b857b !important;
+}
+
+/* Dropdowns */
+
+select{
+    background:#ffffff !important;
+    color:#24211d !important;
+}
+
+/* Chore Cards */
+
+.chore-item,
+.chore-card,
+.grocery-item,
+.grocery-card{
+    background:rgba(255,255,255,.70)!important;
+    border:1px solid rgba(70,65,55,.12)!important;
+    color:#24211d!important;
+
+    backdrop-filter:blur(18px);
+}
+
+/* Grocery Category */
+
+.grocery-category{
+    background:rgba(255,255,255,.55)!important;
+    border:1px solid rgba(70,65,55,.10)!important;
+}
+
+/* Settings Cards */
+
+.settings-card{
+    background:rgba(255,255,255,.72)!important;
+}
+
+/* Primary Buttons */
+
+.add-button,
+.primary-button,
+.save-button,
+.save-pin-button,
+button[type="submit"]{
+
+    background:#cfc7b8!important;
+    color:#1d1d1d!important;
+    border:none!important;
+}
+
+.add-button:hover,
+.primary-button:hover,
+.save-button:hover,
+.save-pin-button:hover,
+button[type="submit"]:hover{
+
+    background:#bdb3a1!important;
+}
+
+/* Remaining badges */
+
+.remaining-badge,
+.counter-pill{
+
+    background:#b9b0a2!important;
+    color:#1d1d1d!important;
+
+}
+
+/* Delete */
+
+.delete-button{
+
+    background:#d86f6f!important;
+
+}
+
+.delete-button:hover{
+
+    background:#c85e5e!important;
+
+}
+
+/* Check circles */
+
+.checkbox,
+.checkbox-circle{
+
+    border-color:#aaa292!important;
+
+}
+/* =========================================
+   FINISH LIGHT THEME CONVERSION
+========================================= */
+
+/* Chore and grocery completion circles */
+
+.chore-check,
+.grocery-check,
+.chore-checkbox,
+.grocery-checkbox,
+.checkbox,
+.checkbox-circle,
+.chore-item input[type="checkbox"],
+.grocery-item input[type="checkbox"] {
+  background: #f8f6f1 !important;
+  border: 2px solid #aaa397 !important;
+  box-shadow: none !important;
+}
+
+.chore-check:hover,
+.grocery-check:hover,
+.chore-checkbox:hover,
+.grocery-checkbox:hover,
+.checkbox:hover,
+.checkbox-circle:hover {
+  background: #eee9df !important;
+  border-color: #8f887c !important;
+}
+
+.chore-check.completed,
+.grocery-check.completed,
+/* ===========================================
+   COMPLETED CHORE CIRCLE
+=========================================== */
+
+.chore-checkbox.completed,
+.chore-check.completed,
+.chore-item input[type="checkbox"]:checked {
+    background: #c94747 !important;
+    border-color: #b63c3c !important;
+    color: white !important;
+    box-shadow:
+        0 0 0 3px rgba(201, 71, 71, 0.15),
+        inset 0 1px 2px rgba(255,255,255,.15);
+}
+
+.chore-checkbox.completed:hover,
+.chore-check.completed:hover,
+.chore-item input[type="checkbox"]:checked:hover {
+    background: #b63c3c !important;
+    border-color: #a63232 !important;
+}
+
+/* Chore and grocery list containers */
+
+.chore-item,
+.grocery-item,
+.grocery-category,
+.grocery-section,
+.chore-card,
+.grocery-card {
+  background: rgba(255, 255, 255, 0.72) !important;
+  border-color: rgba(62, 57, 48, 0.14) !important;
+  color: #24211d !important;
+}
+
+.chore-item h3,
+.chore-item strong,
+.grocery-item h3,
+.grocery-item strong,
+.grocery-category h3 {
+  color: #24211d !important;
+}
+
+.chore-item p,
+.grocery-item p,
+.chore-meta,
+.grocery-meta {
+  color: #817b72 !important;
+}
+
+/* Calendar previous/next month dates */
+
+.month-day.other-month,
+.calendar-day.other-month,
+.month-day.outside-month,
+.calendar-day.outside-month {
+  background: #ddd7ca !important;
+  border-color: #cec7bb !important;
+  color: #8d867c !important;
+  opacity: 1 !important;
+}
+
+/* Normal calendar days */
+
+.month-day,
+.calendar-day {
+  background: rgba(255, 255, 255, 0.72) !important;
+  border-color: rgba(62, 57, 48, 0.14) !important;
+  color: #24211d !important;
+}
+
+/* Today / selected calendar day: warm gray instead of blue */
+
+.month-day.active,
+.month-day.selected,
+.month-day.today,
+.calendar-day.active,
+.calendar-day.selected,
+.calendar-day.today {
+  background: #aaa296 !important;
+  border-color: #928a7f !important;
+  color: #111111 !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.45),
+    0 7px 18px rgba(70, 62, 50, 0.13) !important;
+}
+
+/* Calendar event dots */
+
+.event-dot,
+.calendar-event-dot {
+  background: #8f887c !important;
+}
+
+/* Remaining-count badges */
+
+.remaining-badge,
+.counter-pill,
+.chore-count,
+.grocery-count {
+  background: #aaa296 !important;
+  color: #151412 !important;
+  border-color: #928a7f !important;
+}
+
+/* Primary buttons: remove leftover blue */
+
+.add-button,
+.primary-button,
+.save-button,
+.save-pin-button,
+.calendar-add-button,
+button[type="submit"] {
+  background: #aaa296 !important;
+  border-color: #928a7f !important;
+  color: #111111 !important;
+}
+
+.add-button:hover,
+.primary-button:hover,
+.save-button:hover,
+.save-pin-button:hover,
+.calendar-add-button:hover,
+button[type="submit"]:hover {
+  background: #938b80 !important;
+}
+/* Completed chore circle */
+
+.chore-item.completed .chore-check {
+  background: #c94747 !important;
+  border-color: #b63c3c !important;
+  color: #ffffff !important;
+
+  box-shadow:
+    0 0 0 3px rgba(201, 71, 71, 0.16),
+    inset 0 1px 2px rgba(255, 255, 255, 0.2) !important;
+}
+
+.chore-item.completed .chore-check:hover {
+  background: #b63c3c !important;
+  border-color: #a63232 !important;
+}
+.topbar {
+  position: relative;
+  z-index: 1000;
+}
+
+.topbar-right,
+.notification-wrapper {
+  position: relative;
+  z-index: 1001;
+}
+
+.notification-panel {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+
+  z-index: 9999 !important;
+}
+
+.house-snapshot,
+.home-page,
+.main {
+  position: relative;
+  z-index: 1;
+}
+/* ==========================================
+   GROCERY LIGHT THEME
+========================================== */
+
+.grocery-section,
+.grocery-group,
+.grocery-category,
+.grocery-category-card,
+.grocery-list,
+.grocery-items {
+
+    background: rgba(255,255,255,.68) !important;
+
+    border: 1px solid rgba(70,65,55,.12) !important;
+
+    box-shadow:
+        0 10px 28px rgba(60,55,45,.06);
+
+}
+
+.grocery-item {
+
+    background: rgba(255,255,255,.92) !important;
+
+    border: 1px solid rgba(70,65,55,.10) !important;
+
+    color:#222 !important;
+
+}
+
+.grocery-item h3,
+.grocery-item p,
+.grocery-category h3{
+
+    color:#222 !important;
+
+}
+/* ===========================================
+   COMPLETED GROCERY CIRCLE
+=========================================== */
+
+.grocery-item.completed .grocery-check {
+  background: #c94747 !important;
+  border-color: #b63c3c !important;
+  color: #ffffff !important;
+
+  box-shadow:
+    0 0 0 3px rgba(201, 71, 71, 0.16),
+    inset 0 1px 2px rgba(255, 255, 255, 0.2) !important;
+}
+
+.grocery-item.completed .grocery-check:hover {
+  background: #b63c3c !important;
+  border-color: #a63232 !important;
+}
+/* =========================================
+   SIDEBAR REDESIGN
+========================================= */
+
+.sidebar {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  width: 238px;
+  min-width: 238px;
+  height: 100%;
+
+  padding: 28px 15px 18px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 253, 247, 0.96),
+      rgba(247, 243, 234, 0.94)
+    ) !important;
+
+  border-right: 1px solid rgba(65, 59, 49, 0.1) !important;
+
+  box-shadow:
+    inset -1px 0 rgba(255, 255, 255, 0.72);
+}
+
+.sidebar-brand {
+  margin: 6px 22px 34px;
+
+  color: #1f1f1d;
+
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.sidebar-navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.sidebar-navigation-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  width: 100%;
+  min-height: 50px;
+
+  padding: 0 15px;
+
+  border: 1px solid transparent !important;
+  border-radius: 12px;
+
+  background: transparent !important;
+
+  color: #292824 !important;
+
+  font: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: left;
+
+  box-shadow: none !important;
+
+  cursor: pointer;
+
+  transition:
+    background 160ms ease,
+    border-color 160ms ease,
+    transform 160ms ease;
+}
+
+.sidebar-navigation-item:hover {
+  background: rgba(221, 215, 202, 0.5) !important;
+  border-color: rgba(75, 69, 59, 0.07) !important;
+  transform: translateX(2px);
+}
+
+.sidebar-navigation-item.active {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(226, 220, 207, 0.88),
+      rgba(215, 208, 194, 0.72)
+    ) !important;
+
+  border-color: rgba(75, 69, 59, 0.08) !important;
+
+  color: #1d1c19 !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.72) !important;
+}
+
+.sidebar-navigation-icon {
+  display: grid;
+  place-items: center;
+
+  width: 22px;
+  min-width: 22px;
+
+  color: #6e6a62;
+
+  font-size: 20px;
+  line-height: 1;
+}
+
+.sidebar-navigation-item.active
+.sidebar-navigation-icon {
+  color: #5f5a52;
+}
+
+.sidebar-profile {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  margin-top: auto;
+  padding: 18px 10px 2px;
+
+  border-top: 1px solid rgba(65, 59, 49, 0.09);
+}
+
+.sidebar-avatar {
+  display: grid;
+  place-items: center;
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+
+  background: #d9d2c4;
+
+  font-size: 23px;
+}
+
+.sidebar-profile strong {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #24231f;
+
+  font-size: 14px;
+}
+
+.sidebar-profile span {
+  display: block;
+
+  color: #807a70;
+
+  font-size: 12px;
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    width: 200px;
+    min-width: 200px;
+  }
+
+  .sidebar-brand {
+    margin-left: 14px;
+    font-size: 24px;
+  }
+}
+/* =========================================
+   SIDEBAR FINAL OVERRIDES
+========================================= */
+
+.sidebar {
+  padding-top: 28px !important;
+}
+
+/* KitchenOS title removed */
+
+.sidebar-brand {
+  display: none !important;
+}
+
+.sidebar-navigation {
+  margin-top: 0;
+}
+
+/* SVG icons */
+
+.sidebar-navigation-icon {
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  color: #706b62;
+}
+
+.sidebar-navigation-item.active
+  .sidebar-navigation-icon {
+  color: #3f3c37;
+}
+
+/* Profile is now the Settings button */
+
+.sidebar-profile {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  width: 100%;
+  margin-top: auto;
+  padding: 18px 10px 2px;
+
+  border: 0 !important;
+  border-top: 1px solid rgba(65, 59, 49, 0.1) !important;
+  border-radius: 0;
+
+  background: transparent !important;
+  color: #24231f !important;
+  text-align: left;
+
+  box-shadow: none !important;
+  cursor: pointer;
+
+  transition:
+    background 160ms ease,
+    border-radius 160ms ease;
+}
+
+.sidebar-profile:hover,
+.sidebar-profile.active {
+  background: rgba(215, 208, 194, 0.55) !important;
+  border-radius: 12px;
+}
+
+.sidebar-profile.active {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.65) !important;
+}
+
+.sidebar-avatar {
+  display: grid;
+  place-items: center;
+
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+
+  border-radius: 50%;
+  background: #d7d0c2;
+  color: #625e57;
+}
+
+.sidebar-profile-icon {
+  width: 23px;
+  height: 23px;
+}
+
+.sidebar-profile-copy {
+  display: block;
+  min-width: 0;
+  flex: 1;
+}
+
+.sidebar-profile-copy strong {
+  display: block;
+  margin-bottom: 3px;
+  color: #24231f;
+  font-size: 14px;
+}
+
+.sidebar-profile-copy > span {
+  display: block;
+  overflow: hidden;
+  color: #807a70;
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sidebar-profile-arrow {
+  color: #8a847a;
+  font-size: 24px;
+  line-height: 1;
+}
+/* =====================================================
+   SIDEBAR SPACING OVERRIDE
+   (Paste at very bottom of App.css)
+===================================================== */
+
+.sidebar {
+
+    padding: 42px 18px 24px !important;
+
+}
+
+/* Space between buttons */
+
+.sidebar-navigation {
+
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+
+    margin-top: 12px !important;
+
+}
+
+/* Larger menu cards */
+
+.sidebar-navigation-item {
+
+    min-height: 62px !important;
+
+    padding: 0 18px !important;
+
+    border-radius: 18px !important;
+
+    font-size: 17px !important;
+
+    transition:
+        transform .18s ease,
+        background .18s ease,
+        box-shadow .18s ease !important;
+
+}
+
+/* Floating hover */
+
+.sidebar-navigation-item:hover {
+
+    transform: translateX(4px);
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.08) !important;
+
+}
+
+/* Active */
+
+.sidebar-navigation-item.active {
+
+    transform: translateX(3px);
+
+}
+
+/* Better icon sizing */
+
+.sidebar-navigation-icon {
+
+    width: 24px !important;
+    height: 24px !important;
+
+    min-width: 24px !important;
+
+    margin-right: 8px !important;
+
+}
+
+/* Push profile farther down */
+
+.sidebar-profile {
+
+    margin-top: auto !important;
+
+    margin-bottom: 10px !important;
+
+    padding: 18px !important;
+
+    border-radius: 18px !important;
+
+    transition:
+        background .18s ease,
+        transform .18s ease !important;
+
+}
+
+.sidebar-profile:hover {
+
+    transform: translateY(-2px);
+
+}
+
+/* Bigger avatar */
+
+.sidebar-avatar {
+
+    width: 52px !important;
+    height: 52px !important;
+    min-width: 52px !important;
+
+}
+
+/* Larger profile text */
+
+.sidebar-profile strong {
+
+    font-size: 16px !important;
+
+}
+
+.sidebar-profile-copy span {
+
+    font-size: 13px !important;
+
+}
+
+/* Arrow */
+
+.sidebar-profile-arrow {
+
+    font-size: 24px !important;
+
+}
+
+/* Sidebar breathes a little more */
+
+.sidebar-navigation-item:first-child {
+
+    margin-top: 6px;
+
+}
+
+.sidebar-navigation-item:last-child {
+
+    margin-bottom: 12px;
+
+}
+/* ======================================================
+   SIDEBAR V2
+   Apple / Notion Style
+====================================================== */
+
+/* Navigation container */
+
+.sidebar-navigation{
+
+    display:flex;
+    flex-direction:column;
+    gap:10px !important;
+
+}
+
+/* Normal rows */
+
+.sidebar-navigation-item{
+
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+    min-height:56px !important;
+
+    padding:0 18px !important;
+
+    border-radius:16px;
+
+    background:transparent !important;
+
+    border:none !important;
+
+    box-shadow:none !important;
+
+    color:#3b3832 !important;
+
+    transition:
+        background .18s ease,
+        transform .18s ease,
+        color .18s ease;
+
+}
+
+/* Hover */
+
+.sidebar-navigation-item:hover{
+
+    background:rgba(210,202,188,.35)!important;
+
+    transform:translateX(4px);
+
+}
+
+/* ONLY active gets a card */
+
+.sidebar-navigation-item.active{
+
+    background:#d8d1c4!important;
+
+    color:#1f1f1f!important;
+
+    box-shadow:
+        inset 0 1px rgba(255,255,255,.7),
+        0 8px 24px rgba(0,0,0,.05)!important;
+
+}
+
+/* Icons */
+
+.sidebar-navigation-icon{
+
+    width:24px!important;
+    height:24px!important;
+
+    color:#757066!important;
+
+    transition:.18s;
+
+}
+
+.sidebar-navigation-item.active
+.sidebar-navigation-icon{
+
+    color:#37342f!important;
+
+}
+
+.sidebar-navigation-item:hover
+.sidebar-navigation-icon{
+
+    color:#555149;
+
+}
+
+/* Text */
+
+.sidebar-navigation-item span{
+
+    font-size:17px;
+
+    font-weight:500;
+
+}
+
+/* Profile section */
+
+.sidebar-profile{
+
+    margin-top:auto!important;
+
+    margin-bottom:10px!important;
+
+    padding:18px!important;
+
+    border-radius:18px!important;
+
+    background:transparent!important;
+
+    border:none!important;
+
+    box-shadow:none!important;
+
+    transition:
+        background .18s,
+        transform .18s;
+
+}
+
+.sidebar-profile:hover{
+
+    background:rgba(210,202,188,.35)!important;
+
+    transform:translateY(-2px);
+
+}
+
+.sidebar-profile.active{
+
+    background:#d8d1c4!important;
+
+}
+
+/* Avatar */
+
+.sidebar-avatar{
+
+    width:54px!important;
+    height:54px!important;
+    min-width:54px!important;
+
+    border-radius:50%;
+
+    background:#d6cfbf!important;
+
+}
+
+.sidebar-profile strong{
+
+    font-size:16px!important;
+
+}
+
+.sidebar-profile-copy span{
+
+    font-size:13px!important;
+
+    color:#7b756c!important;
+
+}
+
+/* Chevron */
+
+.sidebar-profile-arrow{
+
+    color:#9a9388!important;
+
+    font-size:22px!important;
+
+}
+/* =========================================
+   EXPANDED WEATHER WIDGET
+========================================= */
+
+.house-snapshot {
+  grid-template-columns:
+    minmax(0, 0.9fr)
+    minmax(330px, 1.2fr)
+    minmax(0, 1.25fr) !important;
+}
+
+.snapshot-weather.weather-feature {
+  min-height: 224px;
+  height: auto;
+  padding: 22px 22px 0;
+}
+
+.weather-feature-content {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 22px;
+  align-items: center;
+
+  flex: 1;
+}
+
+.weather-feature-primary {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.weather-feature-primary .weather-icon {
+  font-size: 48px;
+}
+
+.weather-feature-primary .weather-temp {
+  margin-top: 6px;
+  font-size: 58px;
+}
+
+.weather-condition {
+  margin-top: 3px;
+  color: #24211d;
+  font-size: 17px;
+}
+
+.weather-feature-stats {
+  display: grid;
+  gap: 11px;
+  min-width: 122px;
+}
+
+.weather-feature-stats > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.weather-feature-stats span {
+  color: #777168;
+  font-size: 13px;
+}
+
+.weather-feature-stats strong {
+  color: #24211d;
+  font-size: 13px;
+}
+
+.weather-forecast-link {
+  position: relative;
+  z-index: 3;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: calc(100% + 44px);
+  margin: 18px -22px 0;
+  padding: 14px 20px;
+
+  border: 0;
+  border-top: 1px solid rgba(62, 57, 48, 0.12);
+  border-radius: 0 0 16px 16px;
+
+  background: rgba(255, 255, 255, 0.34) !important;
+  color: #665f55 !important;
+
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.weather-forecast-link:hover {
+  background: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* =========================================
+   WEEKLY FORECAST PAGE
+========================================= */
+
+.weather-page {
+  width: 100%;
+}
+
+.weather-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+
+  margin-bottom: 26px;
+}
+
+.weather-page-header h2 {
+  margin: 4px 0;
+}
+
+.weather-back-button {
+  padding: 12px 17px;
+
+  border: 1px solid rgba(62, 57, 48, 0.15);
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.65) !important;
+  color: #24211d !important;
+
+  cursor: pointer;
+}
+
+.forecast-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+}
+
+.forecast-day-card,
+.forecast-message {
+  padding: 22px;
+
+  border: 1px solid rgba(62, 57, 48, 0.13);
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.82),
+      rgba(250, 247, 239, 0.68)
+    );
+
+  box-shadow:
+    0 14px 34px rgba(70, 60, 42, 0.08);
+}
+
+.forecast-day-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.forecast-day-heading strong,
+.forecast-day-heading span {
+  display: block;
+}
+
+.forecast-day-heading span {
+  margin-top: 5px;
+  color: #777168;
+  font-size: 13px;
+}
+
+.forecast-day-heading img {
+  width: 58px;
+  height: 58px;
+}
+
+.forecast-temperatures {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+
+  margin: 22px 0;
+}
+
+.forecast-temperatures strong {
+  font-size: 42px;
+}
+
+.forecast-temperatures span {
+  color: #777168;
+  font-size: 25px;
+}
+
+.forecast-details {
+  display: grid;
+  gap: 10px;
+}
+
+.forecast-details > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+
+  padding-top: 10px;
+
+  border-top:
+    1px solid rgba(62, 57, 48, 0.09);
+}
+
+.forecast-details span {
+  color: #777168;
+}
+
+@media (max-width: 1100px) {
+  .house-snapshot {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+/* =========================================
+   HOME ALERTS + QUICK ACTIONS
+========================================= */
+
+.home-lower-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+
+  gap: 22px;
+  width: 100%;
+  align-items: stretch;
+}
+
+/* Force Alerts to stay inside its half */
+
+.home-lower-grid > * {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.home-lower-grid .dashboard-card,
+.home-lower-grid .dashboard-card-wide,
+.home-lower-grid .alerts-card {
+  height: 100%;
+  margin: 0 !important;
+}
+
+/* Quick Actions panel */
+
+.home-quick-actions {
+  min-height: 260px;
+  padding: 24px;
+
+  border: 1px solid rgba(62, 57, 48, 0.13);
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.82),
+      rgba(250, 247, 239, 0.68)
+    );
+
+  box-shadow:
+    0 14px 34px rgba(70, 60, 42, 0.08);
+
+  box-sizing: border-box;
+}
+
+.home-panel-label {
+  display: block;
+  margin-bottom: 18px;
+
+  color: #667894;
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.quick-actions-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 12px;
+}
+
+.quick-action-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 88px;
+  padding: 14px 10px;
+
+  border: 1px solid rgba(62, 57, 48, 0.12) !important;
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.82),
+      rgba(241, 237, 228, 0.62)
+    ) !important;
+
+  color: #292621 !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 7px 18px rgba(70, 60, 42, 0.07) !important;
+
+  font: inherit;
+  font-size: 13px;
+  text-align: center;
+
+  cursor: pointer;
+
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.quick-action-tile:hover {
+  transform: translateY(-2px);
+
+  border-color: rgba(104, 96, 83, 0.3) !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    0 12px 24px rgba(70, 60, 42, 0.11) !important;
+}
+
+.quick-action-icon {
+  margin-bottom: 9px;
+  font-size: 23px;
+  line-height: 1;
+}
+
+.quick-actions-note {
+  margin: 16px 0 0;
+
+  color: #888177;
+  font-size: 12px;
+  text-align: center;
+}
+
+@media (max-width: 1050px) {
+  .home-lower-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .quick-actions-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+/* =========================================
+   HOME DASHBOARD LAYOUT
+========================================= */
+
+.home-lower-grid {
+
+    display: grid !important;
+
+    grid-template-columns: 1fr 1fr !important;
+
+    gap: 24px !important;
+
+    align-items: stretch;
+
+    width: 100%;
+
+}
+
+/* Force BOTH cards to live inside the grid */
+
+.home-lower-grid > * {
+
+    width: 100% !important;
+
+    max-width: 100% !important;
+
+    margin: 0 !important;
+
+}
+
+/* Alerts */
+
+.home-lower-grid .alerts-card,
+.home-lower-grid .dashboard-card,
+.home-lower-grid .dashboard-panel {
+
+    width: 100% !important;
+    height: 100% !important;
+
+}
+
+/* Quick Actions */
+
+.home-quick-actions {
+
+    width: 100% !important;
+
+    min-height: 260px;
+
+}
+
+/* Mobile */
+
+@media (max-width:1100px){
+
+    .home-lower-grid{
+
+        grid-template-columns:1fr !important;
+
+    }
+
+}

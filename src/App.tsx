@@ -9,13 +9,14 @@ import Home from "./pages/Home";
 import Settings from "./pages/Settings";
 import SideBar from "./components/SideBar";
 import TopBar from "./components/TopBar";
+import Weather from "./pages/Weather";
 
 function App() {
   const [page, setPage] = useState("home");
 
   return (
     <div className="app">
-      <TopBar />
+      <TopBar onNavigate={setPage} />
 
       <div className="content">
         <SideBar page={page} setPage={setPage} />
@@ -26,6 +27,7 @@ function App() {
         {page === "grocery" && <Grocery />}
         {page === "cameras" && <Cameras />}
         {page === "settings" && <Settings />}
+        {page === "weather" && ( <Weather onNavigate={setPage} /> )}
       </div>
     </div>
   );

@@ -1,4 +1,8 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
+import {
+  useKitchenStore,
+  type Chore,
+} from "../store/KitchenStore";
 
 type Chore = {
   id: string;
@@ -61,7 +65,7 @@ function formatDueDate(dueDate: string) {
 }
 
 function Chores() {
-  const [chores, setChores] = useState<Chore[]>(loadChores);
+const { chores, setChores } = useKitchenStore();
   const [title, setTitle] = useState("");
   const [assignedTo, setAssignedTo] = useState("Anyone");
   const [dueDate, setDueDate] = useState("");
@@ -71,13 +75,7 @@ function Chores() {
   const [enteredPin, setEnteredPin] = useState("");
   const [pinError, setPinError] = useState("");
 
-  useEffect(() => {
-    localStorage.setItem(
-      "kitchenos-chores",
-      JSON.stringify(chores),
-    );
-  }, [chores]);
-
+  
   const sortedChores = useMemo(
     () =>
       [...chores].sort((a, b) => {

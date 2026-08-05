@@ -1,17 +1,64 @@
-import QuickActionsCard from "../cards/QuickActionsCard";
-import TodayCard from "../cards/TodayCard";
-import HomeStatusCard from "../cards/HomeStatusCard";
-import ChoresCard from "../cards/ChoresCard";
-import NextEventCard from "../cards/NextEventCard";
-import WeatherCard from "../cards/WeatherCard";
 import { useEffect, useState } from "react";
-import GroceryCard from "../cards/GroceryCard";
+
+import AlertsCard from "../cards/AlertsCard";
+import QuickActionsPanel from "../cards/QuickActionsPanel";
+import HouseSnapshot from "../components/HouseSnapshot";
 
 type HomeProps = {
   onNavigate: (page: string) => void;
 };
 
-function Home({ onNavigate }: HomeProps) {  const [now, setNow] = useState(new Date());
+type CalendarEvent = {
+  id: string;
+  title: string;
+  time: string;
+  calendar: string;
+  type: "work" | "personal" | "family";
+};
+
+type EventsByDate = Record<string, CalendarEvent[]>;
+
+function getDateKey(date: Date) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+
+  return `${year}-${month}-${day}`;
+}
+
+function loadCalendarEvents(): EventsByDate {
+  const saved = localStorage.getItem(
+    "kitchenos-calendar-v2",
+  );
+
+  if (!saved) {
+    return {};
+  }
+
+  try {
+    return JSON.parse(saved) as EventsByDate;
+  } catch {
+    return {};
+  }
+}
+
+function convertTimeToMinutes(time: string) {
+  const [clockTime, modifier] = time.split(" ");
+  let [hours, minutes] = clockTime.split(":").map(Number);
+
+  if (modifier === "PM" && hours !== 12) {
+    hours += 12;
+  }
+
+  if (modifier === "AM" && hours === 12) {
+    hours = 0;
+  }
+
+  return hours * 60 + minutes;
+}
+
+function Home({ onNavigate }: HomeProps) {
+  const [now, setNow] = useState(new Date());
 
   useEffect(() => {
     const timer = window.setInterval(() => {
@@ -27,39 +74,41 @@ function Home({ onNavigate }: HomeProps) {  const [now, setNow] = useState(new D
     day: "numeric",
   });
 
-  const hour = now.getHours();
+  const greeting =
+    now.getHours() < 12
+      ? "Good Morning"
+      : now.getHours() < 17
+        ? "Good Afternoon"
+        : "Good Evening";
 
-  let greeting = "Good evening";
+  const eventsByDate = loadCalendarEvents();
 
-  if (hour < 12) {
-    greeting = "Good morning";
-  } else if (hour < 17) {
-    greeting = "Good afternoon";
-  }
+  const todayEvents = [
+    ...(eventsByDate[getDateKey(now)] ?? []),
+  ].sort(
+    (a, b) =>
+      convertTimeToMinutes(a.time) -
+      convertTimeToMinutes(b.time),
+  );
 
   return (
-    <main className="main">
-      <div className="home-header">
-        <div>
-          <p className="eyebrow">{date}</p>
-          <h2>{greeting}, Nick</h2>
-        </div>
+    <main className="main home-page">
+      <HouseSnapshot
+        onNavigate={onNavigate}
+        greeting={greeting}
+        date={date}
+        todayEvents={todayEvents.map(
+          (event) => event.title,
+        )}
+      />
 
-        <div className="home-status">
-          <span className="status-dot" />
-          All systems normal
-        </div>
-      </div>
+      <section className="home-lower-grid">
+        <AlertsCard onNavigate={onNavigate} />
 
-      <section className="dashboard-grid">
-<NextEventCard onNavigate={onNavigate} />
-  <WeatherCard />
-  <ChoresCard onOpen={() => onNavigate("chores")} />
-  <GroceryCard onOpen={() => onNavigate("grocery")} />
-  <HomeStatusCard />
-  <TodayCard onNavigate={onNavigate} />
-  <QuickActionsCard onNavigate={onNavigate} />
-</section>
+        <QuickActionsPanel
+          onNavigate={onNavigate}
+        />
+      </section>
     </main>
   );
 }

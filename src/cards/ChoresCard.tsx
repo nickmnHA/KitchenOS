@@ -1,33 +1,12 @@
 import DashboardCard from "./DashboardCard";
-
-type Chore = {
-  id: string;
-  title: string;
-  assignedTo: string;
-  dueDate: string;
-  completed: boolean;
-};
+import { useKitchenStore } from "../store/KitchenStore";
 
 type ChoresCardProps = {
   onOpen: () => void;
 };
 
-function loadChores(): Chore[] {
-  const saved = localStorage.getItem("kitchenos-chores");
-
-  if (!saved) {
-    return [];
-  }
-
-  try {
-    return JSON.parse(saved) as Chore[];
-  } catch {
-    return [];
-  }
-}
-
 function ChoresCard({ onOpen }: ChoresCardProps) {
-  const chores = loadChores();
+  const { chores } = useKitchenStore();
 
   const remainingChores = chores.filter(
     (chore) => !chore.completed,
