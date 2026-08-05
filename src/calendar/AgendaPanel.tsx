@@ -57,12 +57,20 @@ function AgendaPanel({
                 </button>
 
                 <button
-                  className="event-delete-button"
-                  onClick={() => onDeleteEvent(event.id)}
-                  aria-label={`Delete ${event.title}`}
-                >
-                  ×
-                </button>
+  className="event-delete-button"
+  onClick={() => {
+    const confirmed = window.confirm(
+      `Delete "${event.title}"?`,
+    );
+
+    if (confirmed) {
+      onDeleteEvent(event.id);
+    }
+  }}
+  aria-label={`Delete ${event.title}`}
+>
+  ×
+</button>
               </div>
             </article>
           ))

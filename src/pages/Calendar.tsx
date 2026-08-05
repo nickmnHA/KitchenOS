@@ -131,6 +131,20 @@ function Calendar() {
     );
   }, [eventsByDate]);
 
+  function jumpToToday() {
+  const now = new Date();
+
+  setVisibleMonth(
+    new Date(
+      now.getFullYear(),
+      now.getMonth(),
+      1,
+    ),
+  );
+
+  setSelectedDate(now);
+}
+
   function changeMonth(amount: number) {
     const newMonth = new Date(
       visibleMonth.getFullYear(),
@@ -189,18 +203,25 @@ function Calendar() {
       setEventsByDate((currentEvents) => ({
         ...currentEvents,
         [selectedDateKey]: (
-          currentEvents[selectedDateKey] ?? []
-        ).map((event) =>
-          event.id === editingEventId
-            ? {
-                ...event,
-                title: eventTitle.trim(),
-                time: formattedTime,
-                type: eventType,
-                calendar: calendarNames[eventType],
-              }
-            : event,
-        ),
+  currentEvents[selectedDateKey] ?? []
+)
+  .map((event) =>
+    event.id === editingEventId
+      ? {
+          ...event,
+          title: eventTitle.trim(),
+          time: formattedTime,
+          type: eventType,
+          calendar: calendarNames[eventType],
+        }
+      : event,
+  )
+  .sort(
+    (a, b) =>
+      new Date(`2000-01-01 ${a.time}`).getTime() -
+      new Date(`2000-01-01 ${b.time}`).getTime(),
+  ),
+        
       }));
     } else {
       const newEvent: CalendarEvent = {
@@ -213,10 +234,14 @@ function Calendar() {
 
       setEventsByDate((currentEvents) => ({
         ...currentEvents,
-        [selectedDateKey]: [
-          ...(currentEvents[selectedDateKey] ?? []),
-          newEvent,
-        ],
+       [selectedDateKey]: [
+  ...(currentEvents[selectedDateKey] ?? []),
+  newEvent,
+].sort(
+  (a, b) =>
+    new Date(`2000-01-01 ${a.time}`).getTime() -
+    new Date(`2000-01-01 ${b.time}`).getTime(),
+),
       }));
     }
 
@@ -271,8 +296,10 @@ function Calendar() {
 
   return (
     <main className="main">
-      <CalendarHeader onAddEvent={openNewEventModal} />
-
+<CalendarHeader
+  onToday={jumpToToday}
+  onAddEvent={openNewEventModal}
+/>
       <section className="calendar-layout">
         <div className="calendar-panel">
           <div className="calendar-month-header">

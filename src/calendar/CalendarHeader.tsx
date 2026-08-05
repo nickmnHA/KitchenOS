@@ -1,8 +1,12 @@
 type CalendarHeaderProps = {
   onAddEvent: () => void;
+  onToday: () => void;
 };
 
-function CalendarHeader({ onAddEvent }: CalendarHeaderProps) {
+function CalendarHeader({
+  onAddEvent,
+  onToday,
+}: CalendarHeaderProps) {
   return (
     <div className="calendar-header">
       <div>
@@ -10,12 +14,21 @@ function CalendarHeader({ onAddEvent }: CalendarHeaderProps) {
         <h2>Calendar</h2>
       </div>
 
-      <button
-        className="calendar-add-button"
-        onClick={onAddEvent}
-      >
-        + Add Event
-      </button>
+      <div className="calendar-header-actions">
+        <button
+          className="calendar-today-button"
+          onClick={onToday}
+        >
+          Today
+        </button>
+
+        <button
+          className="calendar-add-button"
+          onClick={onAddEvent}
+        >
+          + Add Event
+        </button>
+      </div>
     </div>
   );
 }

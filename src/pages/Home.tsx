@@ -5,9 +5,13 @@ import ChoresCard from "../cards/ChoresCard";
 import NextEventCard from "../cards/NextEventCard";
 import WeatherCard from "../cards/WeatherCard";
 import { useEffect, useState } from "react";
+import GroceryCard from "../cards/GroceryCard";
 
-function Home() {
-  const [now, setNow] = useState(new Date());
+type HomeProps = {
+  onNavigate: (page: string) => void;
+};
+
+function Home({ onNavigate }: HomeProps) {  const [now, setNow] = useState(new Date());
 
   useEffect(() => {
     const timer = window.setInterval(() => {
@@ -48,17 +52,14 @@ function Home() {
       </div>
 
       <section className="dashboard-grid">
-        <NextEventCard />
-
-      <WeatherCard />
-        <ChoresCard />
-
-        <HomeStatusCard />
-
-        <TodayCard />
-
-        <QuickActionsCard />
-      </section>
+<NextEventCard onNavigate={onNavigate} />
+  <WeatherCard />
+  <ChoresCard onOpen={() => onNavigate("chores")} />
+  <GroceryCard onOpen={() => onNavigate("grocery")} />
+  <HomeStatusCard />
+  <TodayCard onNavigate={onNavigate} />
+  <QuickActionsCard onNavigate={onNavigate} />
+</section>
     </main>
   );
 }

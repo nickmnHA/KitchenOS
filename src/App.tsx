@@ -20,7 +20,7 @@ function App() {
       <div className="content">
         <SideBar page={page} setPage={setPage} />
 
-        {page === "home" && <Home />}
+        {page === "home" && <Home onNavigate={setPage} />}
         {page === "calendar" && <Calendar />}
         {page === "chores" && <Chores />}
         {page === "grocery" && <Grocery />}
