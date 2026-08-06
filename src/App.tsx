@@ -10,6 +10,7 @@ import Settings from "./pages/Settings";
 import SideBar from "./components/SideBar";
 import TopBar from "./components/TopBar";
 import Weather from "./pages/Weather";
+import TouchKeyboard from "./components/TouchKeyboard";
 
 function App() {
   const [page, setPage] = useState("home");
@@ -29,6 +30,7 @@ function App() {
         {page === "settings" && <Settings />}
         {page === "weather" && ( <Weather onNavigate={setPage} /> )}
       </div>
+      <TouchKeyboard />
     </div>
   );
 }

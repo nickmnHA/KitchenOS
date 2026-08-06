@@ -1,53 +1,101 @@
+import { useEffect, useState } from "react";
+
 type QuickActionsPanelProps = {
   onNavigate: (page: string) => void;
 };
 
-const actions = [
-  {
-    id: "doors",
-    icon: "🔒",
-    label: "Lock All Doors",
-  },
-  {
-    id: "lights",
-    icon: "💡",
-    label: "Turn Off All Lights",
-  },
-  {
-    id: "garage",
-    icon: "🚪",
-    label: "Close Garage",
-  },
-  {
-    id: "security",
-    icon: "🛡️",
-    label: "Arm Security",
-  },
-  {
-    id: "cameras",
-    icon: "📷",
-    label: "Check Cameras",
-  },
-  {
-    id: "water",
-    icon: "💧",
-    label: "Run Water Check",
-  },
-];
+type GarageLightState =
+  | "connecting"
+  | "on"
+  | "off"
+  | "unavailable";
 
 function QuickActionsPanel({
   onNavigate,
 }: QuickActionsPanelProps) {
-  function handleAction(actionId: string) {
-    /*
-      These buttons are placeholders for Home Assistant.
+  const [garageLights, setGarageLights] =
+    useState<GarageLightState>("connecting");
 
-      Later, replace this function with calls to your
-      Home Assistant service endpoints.
-    */
+  const [updating, setUpdating] = useState(false);
 
-    if (actionId === "cameras") {
-      onNavigate("cameras");
+  async function loadGarageLights() {
+    try {
+      const response = await fetch(
+        "/ha-api/states/switch.garage_lights",
+      );
+
+      if (!response.ok) {
+        throw new Error(
+          `Home Assistant error: ${response.status}`,
+        );
+      }
+
+      const data = (await response.json()) as {
+        state: string;
+      };
+
+      setGarageLights(
+        data.state === "on"
+          ? "on"
+          : data.state === "off"
+            ? "off"
+            : "unavailable",
+      );
+    } catch (error) {
+      console.error(error);
+      setGarageLights("unavailable");
+    }
+  }
+
+  useEffect(() => {
+    void loadGarageLights();
+
+    const timer = window.setInterval(() => {
+      void loadGarageLights();
+    }, 10000);
+
+    return () => window.clearInterval(timer);
+  }, []);
+
+  async function toggleGarageLights() {
+    if (
+      updating ||
+      garageLights === "connecting" ||
+      garageLights === "unavailable"
+    ) {
+      return;
+    }
+
+    setUpdating(true);
+
+    try {
+      const response = await fetch(
+        "/ha-api/services/switch/toggle",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            entity_id: "switch.garage_lights",
+          }),
+        },
+      );
+
+      if (!response.ok) {
+        throw new Error(
+          `Home Assistant error: ${response.status}`,
+        );
+      }
+
+      window.setTimeout(() => {
+        void loadGarageLights();
+      }, 600);
+    } catch (error) {
+      console.error(error);
+      setGarageLights("unavailable");
+    } finally {
+      setUpdating(false);
     }
   }
 
@@ -58,25 +106,55 @@ function QuickActionsPanel({
       </span>
 
       <div className="quick-actions-grid">
-        {actions.map((action) => (
-          <button
-            key={action.id}
-            type="button"
-            className="quick-action-tile"
-            onClick={() => handleAction(action.id)}
-          >
-            <span className="quick-action-icon">
-              {action.icon}
-            </span>
+        <button
+          type="button"
+          className={`quick-action-tile ${
+            garageLights === "on"
+              ? "quick-action-active"
+              : ""
+          }`}
+          onClick={toggleGarageLights}
+          disabled={
+            updating ||
+            garageLights === "connecting" ||
+            garageLights === "unavailable"
+          }
+        >
+          <span className="quick-action-icon">💡</span>
 
-            <span>{action.label}</span>
-          </button>
-        ))}
+          <span>
+            {updating
+              ? "Updating..."
+              : garageLights === "on"
+                ? "Turn Off Garage Lights"
+                : garageLights === "off"
+                  ? "Turn On Garage Lights"
+                  : garageLights === "connecting"
+                    ? "Connecting..."
+                    : "Garage Lights Unavailable"}
+          </span>
+
+          <small>
+            {garageLights === "on"
+              ? "Currently on"
+              : garageLights === "off"
+                ? "Currently off"
+                : garageLights === "connecting"
+                  ? "Checking Home Assistant"
+                  : "Connection failed"}
+          </small>
+        </button>
+
+        <button
+          type="button"
+          className="quick-action-tile"
+          onClick={() => onNavigate("cameras")}
+        >
+          <span className="quick-action-icon">📷</span>
+          <span>Check Cameras</span>
+          <small>Open cameras</small>
+        </button>
       </div>
-
-      <p className="quick-actions-note">
-        Home Assistant controls will connect here.
-      </p>
     </section>
   );
 }

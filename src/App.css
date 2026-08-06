@@ -5101,3 +5101,462 @@ button[type="submit"]:hover {
     }
 
 }
+.quick-action-tile small {
+  display: block;
+  margin-top: 5px;
+  color: #817a70;
+  font-size: 11px;
+}
+
+.quick-action-tile.active {
+  border-color: rgba(180, 140, 35, 0.38) !important;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 239, 167, 0.92),
+      rgba(244, 217, 117, 0.62)
+    ) !important;
+}
+
+.quick-action-tile:disabled {
+  cursor: default;
+  opacity: 0.58;
+}
+
+.quick-actions-error {
+  margin: 14px 0 0;
+  color: #a63232;
+  font-size: 12px;
+  text-align: center;
+}
+/* Home Assistant Quick Action states */
+
+.quick-action-tile small {
+  display: block;
+  margin-top: 6px;
+  color: #817a70;
+  font-size: 11px;
+}
+
+.quick-action-tile.quick-action-active {
+  border-color:
+    rgba(176, 135, 29, 0.42) !important;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 238, 159, 0.94),
+      rgba(239, 207, 91, 0.64)
+    ) !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.85),
+    0 10px 24px rgba(160, 118, 20, 0.14)
+    !important;
+}
+
+.quick-action-tile:disabled {
+  cursor: default;
+  opacity: 0.62;
+}
+
+.quick-actions-error {
+  margin: 14px 0 0;
+  color: #a63232;
+  font-size: 12px;
+  text-align: center;
+}
+/* =========================================
+   LIVE HOME ASSISTANT STATUS
+========================================= */
+
+.live-status-pill {
+  min-height: 58px;
+}
+
+.live-status-copy {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.live-status-copy strong {
+  color: inherit;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.live-status-copy small {
+  margin-top: 3px;
+  color: inherit;
+  font-size: 11px;
+  opacity: 0.7;
+}
+
+/* Locked door */
+
+.quick-action-tile.quick-action-secure {
+  border-color:
+    rgba(42, 140, 76, 0.28) !important;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(222, 249, 228, 0.88),
+      rgba(193, 236, 205, 0.58)
+    ) !important;
+}
+
+/* Unlocked door */
+
+.quick-action-tile.quick-action-warning {
+  border-color:
+    rgba(201, 71, 71, 0.35) !important;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 228, 228, 0.9),
+      rgba(247, 197, 197, 0.62)
+    ) !important;
+}
+/* Front-door Home Assistant details */
+
+.front-door-status {
+  align-items: flex-start;
+  grid-column: 1 / -1;
+  min-height: 118px;
+}
+
+.door-lock-details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4px 18px;
+
+  margin-top: 10px;
+
+  color: inherit;
+  font-size: 10px;
+  opacity: 0.72;
+}
+
+.door-lock-details span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+  .door-lock-details {
+    grid-template-columns: 1fr;
+  }
+}
+/* =========================================
+   GLOBAL SECURITY PIN MODAL
+========================================= */
+.security-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50000;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(66, 60, 50, 0.34);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.security-modal {
+  position: relative;
+  width: min(390px, 100%);
+  padding: 30px;
+  border: 1px solid rgba(65, 59, 49, 0.16);
+  border-radius: 26px;
+  background: rgba(250, 247, 239, 0.94);
+  box-shadow: 0 28px 80px rgba(55, 48, 38, 0.25);
+  text-align: center;
+}
+
+.security-modal h3 { margin: 5px 0 8px; font-size: 25px; }
+.security-description { margin: 0 auto 22px; max-width: 290px; }
+.security-close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(210, 202, 188, 0.5) !important;
+  color: #2a2722 !important;
+  font-size: 24px;
+  cursor: pointer;
+}
+.security-dots { display: flex; justify-content: center; gap: 15px; margin: 18px 0 6px; }
+.security-dots span {
+  width: 14px;
+  height: 14px;
+  border: 2px solid #968e82;
+  border-radius: 50%;
+}
+.security-dots span.filled { background: #3b3731; border-color: #3b3731; }
+.security-error { min-height: 20px; margin: 7px 0; color: #b63c3c; font-size: 13px; }
+.security-keypad { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.security-keypad button {
+  min-height: 56px;
+  border: 1px solid rgba(65, 59, 49, 0.13) !important;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.72) !important;
+  color: #24211d !important;
+  font-size: 20px;
+  cursor: pointer;
+}
+.security-keypad button:hover { background: #e3ddd1 !important; }
+.security-confirm {
+  width: 100%;
+  margin-top: 14px;
+  min-height: 52px;
+  border: 0;
+  border-radius: 15px;
+  background: #8f887c !important;
+  color: white !important;
+  font-weight: 700;
+  cursor: pointer;
+}
+.security-confirm:disabled { opacity: 0.45; cursor: default; }
+
+.door-lock-actions { display: flex; gap: 9px; margin-top: 12px; }
+.door-lock-actions button {
+  min-width: 92px;
+  padding: 9px 14px;
+  border: 1px solid rgba(65, 59, 49, 0.16) !important;
+  border-radius: 11px;
+  background: rgba(255, 255, 255, 0.65) !important;
+  color: #28251f !important;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.door-lock-actions .door-unlock-button {
+  background: rgba(254, 226, 226, 0.88) !important;
+  color: #8f2525 !important;
+}
+.door-lock-actions button:disabled { opacity: 0.45; cursor: default; }
+.door-action-error { display: block; margin-top: 8px; color: #a63232; font-size: 11px; }
+.front-door-copy { flex: 1; }
+
+/* =========================================
+   GLOBAL TOUCH KEYBOARD
+========================================= */
+
+.touch-keyboard {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 30000;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  padding: 12px 18px 18px;
+
+  border-top: 1px solid rgba(64, 58, 49, 0.16);
+  background: rgba(232, 227, 216, 0.96);
+  box-shadow: 0 -18px 50px rgba(53, 47, 38, 0.2);
+
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+}
+
+.touch-keyboard-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  max-width: 1120px;
+  width: 100%;
+  margin: 0 auto 2px;
+
+  color: #696258;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.touch-keyboard-toolbar button {
+  min-height: 34px;
+  padding: 0 14px;
+  border: 1px solid rgba(64, 58, 49, 0.13) !important;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.64) !important;
+  color: #39352f !important;
+  font-weight: 700;
+}
+
+.touch-keyboard-row {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+
+  max-width: 1120px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.touch-keyboard-row > button {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 92px;
+  min-height: 52px;
+  padding: 0 8px;
+
+  border: 1px solid rgba(64, 58, 49, 0.14) !important;
+  border-radius: 11px;
+  background: rgba(255, 255, 255, 0.87) !important;
+  color: #24211d !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.92),
+    0 3px 8px rgba(60, 53, 43, 0.09) !important;
+
+  font: inherit;
+  font-size: 17px;
+  font-weight: 600;
+
+  touch-action: manipulation;
+  user-select: none;
+}
+
+.touch-keyboard-row > button:active,
+.touch-keyboard-row > button.active {
+  transform: translateY(1px);
+  background: #d8d1c4 !important;
+}
+
+.touch-keyboard-row > .touch-keyboard-wide {
+  flex-grow: 1.45;
+  max-width: 130px;
+  background: #d8d1c4 !important;
+  font-size: 14px;
+}
+
+.touch-keyboard-row > .touch-keyboard-space {
+  flex-grow: 5;
+  max-width: 520px;
+}
+
+.touch-keyboard-row > .touch-keyboard-enter {
+  flex-grow: 1.6;
+  max-width: 150px;
+  background: #bcb4a6 !important;
+}
+
+@media (max-width: 760px) {
+  .touch-keyboard {
+    gap: 6px;
+    padding: 9px 7px 12px;
+  }
+
+  .touch-keyboard-row {
+    gap: 5px;
+  }
+
+  .touch-keyboard-row > button {
+    min-height: 46px;
+    border-radius: 8px;
+    font-size: 15px;
+  }
+
+  .touch-keyboard-toolbar {
+    padding: 0 4px;
+  }
+}
+.front-door-status {
+  min-height: 0 !important;
+  gap: 14px !important;
+  padding: 16px 18px !important;
+}
+
+.door-lock-actions {
+  margin-top: 2px !important;
+}
+/* Fix Front Door card layout */
+
+.front-door-status {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  justify-content: flex-start !important;
+  gap: 14px !important;
+
+  width: 100% !important;
+  min-height: 0 !important;
+  padding: 16px 18px !important;
+}
+
+.front-door-header {
+  display: grid !important;
+  grid-template-columns: auto minmax(0, 1fr) auto !important;
+  align-items: center !important;
+  gap: 12px !important;
+  width: 100% !important;
+}
+
+.front-door-icon {
+  display: block !important;
+  flex: none !important;
+  font-size: 20px !important;
+}
+
+.front-door-heading {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  min-width: 0 !important;
+}
+
+.front-door-heading strong {
+  display: block !important;
+  color: #24211d !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+}
+
+.front-door-heading small {
+  display: block !important;
+  margin-top: 3px !important;
+  color: #756f65 !important;
+  font-size: 11px !important;
+  line-height: 1.2 !important;
+}
+
+.front-door-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  padding: 6px 10px !important;
+  border-radius: 999px !important;
+
+  white-space: nowrap !important;
+}
+
+.door-lock-actions {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 10px !important;
+
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+.door-lock-actions button {
+  width: 100% !important;
+  min-height: 38px !important;
+  margin: 0 !important;
+}

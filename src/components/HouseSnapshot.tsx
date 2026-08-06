@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useKitchenStore } from "../store/KitchenStore";
+import LiveHomeStatus from "./LiveHomeStatus";
 
 type HouseSnapshotProps = {
   onNavigate: (page: string) => void;
@@ -511,33 +512,7 @@ function HouseSnapshot({
               </div>
             )}
 
-            <div className="status-pill">
-              <span className="status-pill-icon">
-                🌡️
-              </span>
-              <span>Inside 72°</span>
-            </div>
-
-            <div className="status-pill">
-              <span className="status-pill-icon">
-                🚪
-              </span>
-              <span>Garage Closed</span>
-            </div>
-
-            <div className="status-pill">
-              <span className="status-pill-icon">
-                🔒
-              </span>
-              <span>Front Door Locked</span>
-            </div>
-
-            <div className="status-pill">
-              <span className="status-pill-icon">
-                💡
-              </span>
-              <span>8 Lights On</span>
-            </div>
+           <LiveHomeStatus />
           </div>
         </div>
       </div>

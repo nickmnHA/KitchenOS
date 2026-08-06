@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import AlertsCard from "../cards/AlertsCard";
-import QuickActionsPanel from "../cards/QuickActionsPanel";
+import HaQuickActionsPanel from "../cards/HaQuickActionsPanel";
 import HouseSnapshot from "../components/HouseSnapshot";
 
 type HomeProps = {
@@ -63,7 +63,7 @@ function Home({ onNavigate }: HomeProps) {
   useEffect(() => {
     const timer = window.setInterval(() => {
       setNow(new Date());
-    }, 60000);
+    }, 60_000);
 
     return () => window.clearInterval(timer);
   }, []);
@@ -105,7 +105,7 @@ function Home({ onNavigate }: HomeProps) {
       <section className="home-lower-grid">
         <AlertsCard onNavigate={onNavigate} />
 
-        <QuickActionsPanel
+        <HaQuickActionsPanel
           onNavigate={onNavigate}
         />
       </section>
